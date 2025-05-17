@@ -217,8 +217,6 @@
 		331424CE2DD7A7CC00EBDBDB /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
-				092F49932DD918680062379A /* Enum */,
-				092F48FC2DD9045C0062379A /* DetailViewController.swift */,
 				33C8B1712DD8FB9900BA6141 /* Detail */,
 				E52EF5102DD90F4400812460 /* AppViewController.swift */,
 				331424CF2DD7A84200EBDBDB /* Home */,
@@ -265,6 +263,7 @@
 			children = (
 				33C8B1742DD8FBBC00BA6141 /* ViewController */,
 				33C8B1732DD8FBB200BA6141 /* View */,
+				092F49932DD918680062379A /* Enum */,
 			);
 			path = Detail;
 			sourceTree = "<group>";
@@ -281,6 +280,7 @@
 			isa = PBXGroup;
 			children = (
 				33C8B1752DD8FF9600BA6141 /* MoreDetailViewController.swift */,
+				092F48FC2DD9045C0062379A /* DetailViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
