@@ -23,8 +23,9 @@ final class HomeViewController: BaseUIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         startWalking()
-        patchHome()
+        //patchHome()
         //patchComments()
+        postComments()
     }
 
 
@@ -123,6 +124,25 @@ extension HomeViewController {
                 print("서버 에러")
             case .networkFail:
                 print("네트워크 오류")
+            }
+        }
+    }
+}
+
+extension HomeViewController {
+    private func postComments() {
+        CommentsPostService().postComment(to: 1, content: "제발 들어가라 디비에") { result in
+            switch result {
+            case .success(let message):
+                print("등록 성공: \(message)")
+            case .requestErr(let msg):
+                print("요청 에러: \(msg)")
+            case .serverErr:
+                print("서버 오류 발생")
+            case .pathErr:
+                print("디코딩 실패")
+            case .networkFail:
+                print("네트워크 연결 실패")
             }
         }
     }
