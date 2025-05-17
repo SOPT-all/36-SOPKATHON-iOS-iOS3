@@ -18,7 +18,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         let appViewController = AppViewController()
         appViewController.setViewControllers([
             HomeViewController(),
-            TestViewController()
+            MapViewController()
         ])
 
 
