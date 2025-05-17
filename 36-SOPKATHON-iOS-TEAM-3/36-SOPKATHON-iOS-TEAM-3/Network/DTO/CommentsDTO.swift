@@ -8,16 +8,14 @@
 import Foundation
 
 struct IslandCommentResponse: Codable {
-    let success: Bool
-    let data: IslandCommentData
-}
-
-struct IslandCommentData: Codable {
-    let commentList: [IslandComment]
+    let code: String
+    let message: String
+    let data: [IslandComment]
 }
 
 struct IslandComment: Codable {
     let commentId: Int
     let islandId: Int
-    let command: String
+    let comment: String?
 }
+
