@@ -114,7 +114,7 @@ extension HomeViewController {
         CommentsService().fetchComments(for: 1) { result in
             switch result {
             case .success(let comments):
-                comments.forEach { print("\($0.command)") }
+                comments.forEach { print("\($0.comment)") }
             case .requestErr:
                 print("요청 에러")
             case .pathErr:

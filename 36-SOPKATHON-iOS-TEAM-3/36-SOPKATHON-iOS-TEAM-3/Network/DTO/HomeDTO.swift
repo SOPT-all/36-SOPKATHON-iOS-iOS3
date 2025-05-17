@@ -8,11 +8,13 @@
 import Foundation
 
 struct HomeStepResponse: Codable {
-    let success: Bool
+    let code: String
+    let message: String
     let data: StepInfo
 }
 
 struct StepInfo: Codable {
     let totalStep: Int
+    let remainStep: Int
     let islandCount: Int
 }

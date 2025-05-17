@@ -46,7 +46,7 @@ final class CommentsService {
             case .success(let response):
                 do {
                     let decoded = try JSONDecoder().decode(IslandCommentResponse.self, from: response.data)
-                    completion(.success(decoded.data.commentList))
+                    completion(.success(decoded.data))
                 } catch {
                     print("디코딩 에러:", error)
                     completion(.pathErr)
