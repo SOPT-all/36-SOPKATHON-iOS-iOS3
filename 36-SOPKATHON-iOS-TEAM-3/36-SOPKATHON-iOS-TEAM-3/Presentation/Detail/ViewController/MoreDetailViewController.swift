@@ -89,6 +89,8 @@ final class MoreDetailViewController: BaseUIViewController {
     }
 
     override func addTarget() {
+        textFieldView.sendButton.addTarget(self, action: #selector(didTapSend), for: .touchUpInside)
+
         NotificationCenter.default.addObserver(
             self,
             selector: #selector(keyboardWillShow(_:)),
@@ -209,6 +211,31 @@ final class MoreDetailViewController: BaseUIViewController {
     private let spaceView = UIView().then {
         $0.backgroundColor = .white
     }
+    @objc private func didTapSend() {
+        let text = textFieldView.getText().trimmingCharacters(in: .whitespacesAndNewlines)
+        guard !text.isEmpty else { return }
+
+        let request = PostCommentRequest(comment: text)
+
+        commentsService.postComment(islandId: islandId, request: request) { [weak self] result in
+            switch result {
+            case .success:
+                self?.fetchComments()
+                DispatchQueue.main.async {
+                    self?.textFieldView.clearText()
+                }
+            case .requestErr:
+                print("요청 에러")
+            case .pathErr:
+                print("디코딩 실패")
+            case .serverErr:
+                print("서버 에러")
+            case .networkFail:
+                print("네트워크 오류")
+            }
+        }
+    }
+
 }
 
 // MARK: - UITableViewDataSource & Delegate

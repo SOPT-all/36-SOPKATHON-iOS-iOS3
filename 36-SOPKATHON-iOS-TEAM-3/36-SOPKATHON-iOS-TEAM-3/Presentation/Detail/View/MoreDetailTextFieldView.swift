@@ -8,6 +8,14 @@
 import UIKit
 
 class MoreDetailTextFieldView: BaseUIView {
+    func getText() -> String {
+        return commentTextField.text ?? ""
+    }
+
+    func clearText() {
+        commentTextField.text = ""
+    }
+
     
     private let commentTextField = UITextField().then{
         $0.backgroundColor = .color14
@@ -20,7 +28,7 @@ class MoreDetailTextFieldView: BaseUIView {
         $0.layer.cornerRadius = 21
     }
     
-    private let sendButton = UIButton().then{
+    let sendButton = UIButton().then{
         $0.setImage(.sendIcon, for: .normal)
     }
     

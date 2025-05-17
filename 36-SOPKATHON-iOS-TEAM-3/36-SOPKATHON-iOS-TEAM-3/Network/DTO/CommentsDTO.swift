@@ -19,3 +19,6 @@ struct IslandComment: Codable {
     let comment: String?
 }
 
+struct PostCommentRequest: Codable {
+    let comment: String
+}
