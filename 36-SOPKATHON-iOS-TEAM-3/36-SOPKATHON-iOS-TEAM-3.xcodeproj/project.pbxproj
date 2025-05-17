@@ -23,6 +23,9 @@
 		331424CA2DD7A68900EBDBDB /* Pretendard-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 331424C92DD7A68900EBDBDB /* Pretendard-Bold.otf */; };
 		33D382B02DD81EC700F04C42 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 33D382AF2DD81EC700F04C42 /* SnapKit */; };
 		33D382B32DD81ED300F04C42 /* Then in Frameworks */ = {isa = PBXBuildFile; productRef = 33D382B22DD81ED300F04C42 /* Then */; };
+		E5B8BED52DD89C7300C6164C /* BaseUIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5B8BED42DD89C7300C6164C /* BaseUIViewController.swift */; };
+		E5B8BED72DD89C7A00C6164C /* BaseUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5B8BED62DD89C7A00C6164C /* BaseUIView.swift */; };
+		E5B8BEED2DD89D1B00C6164C /* UIViewController+.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5B8BEEC2DD89D1B00C6164C /* UIViewController+.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +45,9 @@
 		331424C52DD7A67600EBDBDB /* Pretendard-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Medium.otf"; sourceTree = "<group>"; };
 		331424C72DD7A67F00EBDBDB /* Pretendard-SemiBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-SemiBold.otf"; sourceTree = "<group>"; };
 		331424C92DD7A68900EBDBDB /* Pretendard-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Bold.otf"; sourceTree = "<group>"; };
+		E5B8BED42DD89C7300C6164C /* BaseUIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseUIViewController.swift; sourceTree = "<group>"; };
+		E5B8BED62DD89C7A00C6164C /* BaseUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseUIView.swift; sourceTree = "<group>"; };
+		E5B8BEEC2DD89D1B00C6164C /* UIViewController+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +105,7 @@
 		331424A72DD7A17200EBDBDB /* Global */ = {
 			isa = PBXGroup;
 			children = (
+				E5B8BED32DD89C6100C6164C /* Base */,
 				331424A92DD7A19000EBDBDB /* Components */,
 				331424AA2DD7A19B00EBDBDB /* Extensions */,
 				331424C12DD7A56A00EBDBDB /* Resources */,
@@ -121,6 +128,7 @@
 				331424B92DD7A3E400EBDBDB /* UITableViewCell+.swift */,
 				331424BD2DD7A44900EBDBDB /* UICollectionViewCell+.swift */,
 				331424BF2DD7A4E600EBDBDB /* UIFont+.swift */,
+				E5B8BEEC2DD89D1B00C6164C /* UIViewController+.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -189,6 +197,15 @@
 			children = (
 			);
 			path = ViewController;
+			sourceTree = "<group>";
+		};
+		E5B8BED32DD89C6100C6164C /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				E5B8BED42DD89C7300C6164C /* BaseUIViewController.swift */,
+				E5B8BED62DD89C7A00C6164C /* BaseUIView.swift */,
+			);
+			path = Base;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -279,7 +296,10 @@
 				331424BE2DD7A45500EBDBDB /* UICollectionViewCell+.swift in Sources */,
 				331424BA2DD7A3E600EBDBDB /* UITableViewCell+.swift in Sources */,
 				331424A42DD7A10600EBDBDB /* SceneDelegate.swift in Sources */,
+				E5B8BED72DD89C7A00C6164C /* BaseUIView.swift in Sources */,
 				331424BC2DD7A41B00EBDBDB /* UIStackView+.swift in Sources */,
+				E5B8BED52DD89C7300C6164C /* BaseUIViewController.swift in Sources */,
+				E5B8BEED2DD89D1B00C6164C /* UIViewController+.swift in Sources */,
 				331424B82DD7A39E00EBDBDB /* UIView+.swift in Sources */,
 				331424A52DD7A10600EBDBDB /* ViewController.swift in Sources */,
 			);
