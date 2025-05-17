@@ -40,6 +40,9 @@
 		E52EF50F2DD8FA0B00812460 /* HomeWalkView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E52EF50E2DD8FA0B00812460 /* HomeWalkView.swift */; };
 		E52EF5112DD90F4400812460 /* AppViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E52EF5102DD90F4400812460 /* AppViewController.swift */; };
 		E52EF5132DD9152D00812460 /* TestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E52EF5122DD9152D00812460 /* TestView.swift */; };
+		E52EF5152DD91E0A00812460 /* HomeDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = E52EF5142DD91E0A00812460 /* HomeDTO.swift */; };
+		E52EF5182DD92A3800812460 /* CommentsAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = E52EF5172DD92A3800812460 /* CommentsAPI.swift */; };
+		E52EF51A2DD92A4C00812460 /* CommentsDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = E52EF5192DD92A4C00812460 /* CommentsDTO.swift */; };
 		E5B8BED52DD89C7300C6164C /* BaseUIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5B8BED42DD89C7300C6164C /* BaseUIViewController.swift */; };
 		E5B8BED72DD89C7A00C6164C /* BaseUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5B8BED62DD89C7A00C6164C /* BaseUIView.swift */; };
 		E5B8BEED2DD89D1B00C6164C /* UIViewController+.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5B8BEEC2DD89D1B00C6164C /* UIViewController+.swift */; };
@@ -89,6 +92,9 @@
 		E52EF50E2DD8FA0B00812460 /* HomeWalkView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeWalkView.swift; sourceTree = "<group>"; };
 		E52EF5102DD90F4400812460 /* AppViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppViewController.swift; sourceTree = "<group>"; };
 		E52EF5122DD9152D00812460 /* TestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestView.swift; sourceTree = "<group>"; };
+		E52EF5142DD91E0A00812460 /* HomeDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeDTO.swift; sourceTree = "<group>"; };
+		E52EF5172DD92A3800812460 /* CommentsAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentsAPI.swift; sourceTree = "<group>"; };
+		E52EF5192DD92A4C00812460 /* CommentsDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentsDTO.swift; sourceTree = "<group>"; };
 		E5B8BED42DD89C7300C6164C /* BaseUIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseUIViewController.swift; sourceTree = "<group>"; };
 		E5B8BED62DD89C7A00C6164C /* BaseUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseUIView.swift; sourceTree = "<group>"; };
 		E5B8BEEC2DD89D1B00C6164C /* UIViewController+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+.swift"; sourceTree = "<group>"; };
@@ -344,6 +350,7 @@
 			isa = PBXGroup;
 			children = (
 				E5B8BF012DD8C86B00C6164C /* HomeAPI.swift */,
+				E52EF5172DD92A3800812460 /* CommentsAPI.swift */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -351,6 +358,8 @@
 		E5B8BEF32DD8C5C000C6164C /* DTO */ = {
 			isa = PBXGroup;
 			children = (
+				E52EF5142DD91E0A00812460 /* HomeDTO.swift */,
+				E52EF5192DD92A4C00812460 /* CommentsDTO.swift */,
 			);
 			path = DTO;
 			sourceTree = "<group>";
@@ -492,6 +501,7 @@
 				F689AA4E2DD922FB001D6B56 /* MapView.swift in Sources */,
 				F689AA4F2DD922FB001D6B56 /* CircleButton.swift in Sources */,
 				F689AA502DD922FB001D6B56 /* CustomPopUpView.swift in Sources */,
+				E52EF5152DD91E0A00812460 /* HomeDTO.swift in Sources */,
 				331424C02DD7A4F400EBDBDB /* UIFont+.swift in Sources */,
 				331424A32DD7A10600EBDBDB /* AppDelegate.swift in Sources */,
 				331424BE2DD7A45500EBDBDB /* UICollectionViewCell+.swift in Sources */,
@@ -503,6 +513,7 @@
 				092F48FD2DD904770062379A /* DetailViewController.swift in Sources */,
 				094DB43E2DD8E9E800E0F4A7 /* TabbarController.swift in Sources */,
 				E5B8BEFC2DD8C6D900C6164C /* BaseTargetType.swift in Sources */,
+				E52EF5182DD92A3800812460 /* CommentsAPI.swift in Sources */,
 				E5B8BED72DD89C7A00C6164C /* BaseUIView.swift in Sources */,
 				E52EF5132DD9152D00812460 /* TestView.swift in Sources */,
 				331424BC2DD7A41B00EBDBDB /* UIStackView+.swift in Sources */,
@@ -519,6 +530,7 @@
 				E52EF50F2DD8FA0B00812460 /* HomeWalkView.swift in Sources */,
 				331424A52DD7A10600EBDBDB /* HomeViewController.swift in Sources */,
 				E5B8BEFE2DD8C75300C6164C /* NetworkResult.swift in Sources */,
+				E52EF51A2DD92A4C00812460 /* CommentsDTO.swift in Sources */,
 				094DB4422DD8F93700E0F4A7 /* UIImage+.swift in Sources */,
 				E52EF50B2DD8E3A400812460 /* HomeProgressView.swift in Sources */,
 				33C8B1DE2DD924C700BA6141 /* DetailTableViewCell.swift in Sources */,
@@ -546,7 +558,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = C9XX799UJH;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "36-SOPKATHON-iOS-TEAM-3/Application/Info.plist";
 				INFOPLIST_KEY_NSMotionUsageDescription = "만보기 기능을 사용할려면, 권한을 허용해주세용";
@@ -576,7 +588,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = C9XX799UJH;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "36-SOPKATHON-iOS-TEAM-3/Application/Info.plist";
 				INFOPLIST_KEY_NSMotionUsageDescription = "만보기 기능을 사용할려면, 권한을 허용해주세용";

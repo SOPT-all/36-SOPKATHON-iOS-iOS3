@@ -23,6 +23,8 @@ final class HomeViewController: BaseUIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         startWalking()
+        patchHome()
+        //patchComments()
     }
 
 
@@ -61,12 +63,67 @@ final class HomeViewController: BaseUIViewController {
                 print("흔들림 감지됨: \(self.shakeCount)")
             }
 
-            homeView.homeProgressView.configure(currentSteps: shakeCount, totalSteps: 100)
+            homeView.homeProgressView.configure(currentSteps: 50-shakeCount, totalSteps: 50, walkCount: shakeCount)
             homeView.homeWalkView.configure(count: shakeCount)
         }
     }
 
     deinit {
         motionManager.stopAccelerometerUpdates()
+    }
+}
+
+extension HomeViewController {
+    private func patchHome() {
+        HomeService().getHomeStep(userID: 1) { result in
+            switch result {
+            case .success(let stepInfo):
+                self.shakeCount = stepInfo.totalStep
+
+                /// 다음 섬까지 남은 걸음 수 (50 간격)
+                let distancePerIsland = 50
+                let remainingSteps = distancePerIsland - (self.shakeCount % distancePerIsland)
+
+                print("총 걸음 수: \(self.shakeCount), 섬 수: \(stepInfo.islandCount), 남은 걸음: \(remainingSteps)")
+
+
+                self.homeView.homeWalkView.configure(count: self.shakeCount)
+                self.homeView.homeIslandView.configure(count: stepInfo.islandCount)
+//                self.homeView.homeProgressView.configure(
+//                    currentSteps: remainingSteps,
+//                    totalSteps: distancePerIsland
+//                )
+
+            case .requestErr:
+                print("요청 에러 (400번대)")
+            case .pathErr:
+                print("경로 에러 (디코딩 실패)")
+            case .serverErr:
+                print("서버 내부 에러")
+            case .networkFail:
+                print("네트워크 연결 실패")
+            }
+        }
+    }
+}
+
+
+
+extension HomeViewController {
+    private func patchComments() {
+        CommentsService().fetchComments(for: 1) { result in
+            switch result {
+            case .success(let comments):
+                comments.forEach { print("\($0.command)") }
+            case .requestErr:
+                print("요청 에러")
+            case .pathErr:
+                print("디코딩 에러")
+            case .serverErr:
+                print("서버 에러")
+            case .networkFail:
+                print("네트워크 오류")
+            }
+        }
     }
 }

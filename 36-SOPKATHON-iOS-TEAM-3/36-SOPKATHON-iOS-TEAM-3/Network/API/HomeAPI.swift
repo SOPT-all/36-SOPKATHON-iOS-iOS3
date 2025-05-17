@@ -5,86 +5,59 @@
 //  Created by 성현주 on 5/17/25.
 //
 
-import Foundation
 
+
+
+import Foundation
 import Moya
 
-enum FlagPlusAPI {
-    /// 여기에 실제 바디를 넣어주세요
-    case setFlag(body: FlagPlus)
+enum HomeAPI {
+    case getHomeStep(userID: Int)
 }
 
-extension FlagPlusAPI: BaseTargetType {
+extension HomeAPI: BaseTargetType {
 
     var path: String {
         switch self {
-        case .setFlag:
-            return "/flag/add"
+        case .getHomeStep(let userID):
+            return "/islands/steps/\(userID)" 
         }
     }
 
     var method: Moya.Method {
-        switch self {
-        case .setFlag:
-            return .post
-        }
+        return .get
     }
 
     var task: Task {
-        switch self {
-        case .setFlag(let body):
-            return .requestJSONEncodable(body)
-        }
+        return .requestPlain
+    }
+
+    var headers: [String : String]? {
+        return ["Content-Type": "application/json"]
     }
 }
 
 
-///예시용이니다.
-struct FlagPlus: Codable {
-    let name: String
-    let dates: [String]
-    let guestNames: [String]
-    let memo: String
-    let minTime: Int
-    let place: String
-    let possibleDates: [Int]
-    let timeSlot: Int
+
+final class HomeService {
+
+    private let provider = MoyaProvider<HomeAPI>(plugins: [MoyaLoggerPlugin()])
+
+    func getHomeStep(userID: Int, completion: @escaping (NetworkResult<StepInfo>) -> Void) {
+        provider.request(.getHomeStep(userID: userID)) { result in
+            switch result {
+            case .success(let response):
+                do {
+                    let decoded = try JSONDecoder().decode(HomeStepResponse.self, from: response.data)
+                    completion(.success(decoded.data.self))
+                } catch {
+                    print("디코딩 에러:", error)
+                    completion(.pathErr)
+                }
+
+            case .failure:
+                completion(.networkFail)
+            }
+        }
+    }
 }
-
-
-
-////이런식으로 사용하시면됩닏. 
-
-//func sendFlagToServer() {
-//        let provider = MoyaProvider<FlagPlusAPI>()
-//
-//        // Create a FlagPlus object with appropriate data
-//        let flagData = FlagPlus(
-//            name: FlagPlusInfo.shared.name,
-//            dates: FlagPlusInfo.shared.dates,
-//            guestNames: FlagPlusInfo.shared.guestId,
-//            memo: FlagPlusInfo.shared.memo,
-//            minTime: FlagPlusInfo.shared.minTime,
-//            place: FlagPlusInfo.shared.place,
-//            possibleDates: FlagPlusInfo.shared.possibleDates, // UNIX timestamps
-//            timeSlot: FlagPlusInfo.shared.timeSlot
-//        )
-//
-//        // Make the API request
-//    provider.request(.setFlag(body: flagData)) { result in
-//        switch result {
-//        case .success(let response):
-//            // Handle successful response
-//            let statusCode = response.statusCode
-//            print("Status Code: \(statusCode)")
-//            // Process the response data as needed
-//
-//        case .failure(let error):
-//            // Handle network error
-//            print("Network Error: \(error)")
-//        }
-//    }
-//
-//    }
-//}
-

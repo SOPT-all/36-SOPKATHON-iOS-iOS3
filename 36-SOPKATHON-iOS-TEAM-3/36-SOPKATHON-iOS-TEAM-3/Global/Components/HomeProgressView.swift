@@ -96,13 +96,13 @@ final class HomeProgressView: BaseUIView {
 
     // MARK: - Public Method
 
-    func configure(currentSteps: Int, totalSteps: Int = 100) {
+    func configure(currentSteps: Int, totalSteps: Int = 50, walkCount: Int) {
         self.currentSteps = currentSteps
         self.totalSteps = totalSteps
 
         stepLabel.text = "\(currentSteps)"
 
-        let progressRatio = CGFloat(min(max(currentSteps, 0), totalSteps)) / CGFloat(totalSteps)
+        let progressRatio = CGFloat(min(max(walkCount, 0), totalSteps)) / CGFloat(totalSteps)
         let fullWidth = progressBackgroundView.frame.width
 
         progressBarView.snp.remakeConstraints {
