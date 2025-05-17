@@ -1,6 +1,9 @@
 # [iOS 3팀] iOS 최종 과제
 1. 시연 영상
 
+https://github.com/user-attachments/assets/bc235c37-fb4a-460c-b9ec-b600fce1a311
+
+
 ![Simulator Screen Recording - iPhone 13 mini - 2025-05-18 at 08 28 45](https://github.com/user-attachments/assets/4afc4470-41f7-4e19-800d-b66a08ced47f)
 
 2.  iOS 팀원들의 사진(after) 🪫
