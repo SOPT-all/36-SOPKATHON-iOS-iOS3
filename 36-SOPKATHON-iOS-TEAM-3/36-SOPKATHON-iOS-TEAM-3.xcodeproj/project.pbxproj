@@ -43,6 +43,8 @@
 		E52EF5152DD91E0A00812460 /* HomeDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = E52EF5142DD91E0A00812460 /* HomeDTO.swift */; };
 		E52EF5182DD92A3800812460 /* CommentsAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = E52EF5172DD92A3800812460 /* CommentsAPI.swift */; };
 		E52EF51A2DD92A4C00812460 /* CommentsDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = E52EF5192DD92A4C00812460 /* CommentsDTO.swift */; };
+		E52EF51C2DD9448A00812460 /* CommentsPostAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = E52EF51B2DD9448A00812460 /* CommentsPostAPI.swift */; };
+		E52EF51E2DD9449900812460 /* CommentsPostDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = E52EF51D2DD9449900812460 /* CommentsPostDTO.swift */; };
 		E5B8BED52DD89C7300C6164C /* BaseUIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5B8BED42DD89C7300C6164C /* BaseUIViewController.swift */; };
 		E5B8BED72DD89C7A00C6164C /* BaseUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5B8BED62DD89C7A00C6164C /* BaseUIView.swift */; };
 		E5B8BEED2DD89D1B00C6164C /* UIViewController+.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5B8BEEC2DD89D1B00C6164C /* UIViewController+.swift */; };
@@ -95,6 +97,8 @@
 		E52EF5142DD91E0A00812460 /* HomeDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeDTO.swift; sourceTree = "<group>"; };
 		E52EF5172DD92A3800812460 /* CommentsAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentsAPI.swift; sourceTree = "<group>"; };
 		E52EF5192DD92A4C00812460 /* CommentsDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentsDTO.swift; sourceTree = "<group>"; };
+		E52EF51B2DD9448A00812460 /* CommentsPostAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentsPostAPI.swift; sourceTree = "<group>"; };
+		E52EF51D2DD9449900812460 /* CommentsPostDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentsPostDTO.swift; sourceTree = "<group>"; };
 		E5B8BED42DD89C7300C6164C /* BaseUIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseUIViewController.swift; sourceTree = "<group>"; };
 		E5B8BED62DD89C7A00C6164C /* BaseUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseUIView.swift; sourceTree = "<group>"; };
 		E5B8BEEC2DD89D1B00C6164C /* UIViewController+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+.swift"; sourceTree = "<group>"; };
@@ -351,6 +355,7 @@
 			children = (
 				E5B8BF012DD8C86B00C6164C /* HomeAPI.swift */,
 				E52EF5172DD92A3800812460 /* CommentsAPI.swift */,
+				E52EF51B2DD9448A00812460 /* CommentsPostAPI.swift */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -360,6 +365,7 @@
 			children = (
 				E52EF5142DD91E0A00812460 /* HomeDTO.swift */,
 				E52EF5192DD92A4C00812460 /* CommentsDTO.swift */,
+				E52EF51D2DD9449900812460 /* CommentsPostDTO.swift */,
 			);
 			path = DTO;
 			sourceTree = "<group>";
@@ -512,8 +518,10 @@
 				331424A42DD7A10600EBDBDB /* SceneDelegate.swift in Sources */,
 				092F48FD2DD904770062379A /* DetailViewController.swift in Sources */,
 				094DB43E2DD8E9E800E0F4A7 /* TabbarController.swift in Sources */,
+				E52EF51C2DD9448A00812460 /* CommentsPostAPI.swift in Sources */,
 				E5B8BEFC2DD8C6D900C6164C /* BaseTargetType.swift in Sources */,
 				E52EF5182DD92A3800812460 /* CommentsAPI.swift in Sources */,
+				E52EF51E2DD9449900812460 /* CommentsPostDTO.swift in Sources */,
 				E5B8BED72DD89C7A00C6164C /* BaseUIView.swift in Sources */,
 				E52EF5132DD9152D00812460 /* TestView.swift in Sources */,
 				331424BC2DD7A41B00EBDBDB /* UIStackView+.swift in Sources */,

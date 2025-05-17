@@ -22,10 +22,11 @@ final class CircleButton: UIButton {
         $0.textColor = .black
     }
     
+    private let coverImage = UIImageView()
+    
     var text: String? {
         didSet { numberLabel.text = text }
     }
-    
     
     init() {
         super.init(frame: .zero)
@@ -36,26 +37,28 @@ final class CircleButton: UIButton {
         fatalError()
     }
     
+    func updateStateUI() {
+        coverImage.image = .xbutton
+    }
+    
+    
     private func setUI() {
         self.addSubviews(
-            buttonView
-        )
-        buttonView.addSubviews(
             buttonImage,
-            numberLabel
+            numberLabel,
+            coverImage
         )
     }
     
     private func setLayout() {
-        buttonView.snp.makeConstraints {
-            $0.edges.equalToSuperview()
-            $0.height.width.equalTo(76)
-        }
         buttonImage.snp.makeConstraints {
             $0.edges.equalToSuperview()
         }
         numberLabel.snp.makeConstraints {
             $0.center.equalToSuperview()
+        }
+        coverImage.snp.makeConstraints {
+            $0.edges.equalToSuperview()
         }
     }
     
