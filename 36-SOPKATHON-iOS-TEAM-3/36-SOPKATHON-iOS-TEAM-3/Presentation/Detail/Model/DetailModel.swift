@@ -10,7 +10,7 @@ import UIKit
 struct DetailModel {
     let comment: String
     init(from islandComment: IslandComment) {
-        self.comment = islandComment.command
+        self.comment = islandComment.comment ?? ""
     }
 }
 //extension DetailModel {
