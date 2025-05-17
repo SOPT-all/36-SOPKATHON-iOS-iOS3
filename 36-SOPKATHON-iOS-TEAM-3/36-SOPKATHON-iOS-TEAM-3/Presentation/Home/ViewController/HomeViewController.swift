@@ -23,8 +23,8 @@ final class HomeViewController: BaseUIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         startWalking()
-        //patchHome()
-        patchComments()
+        patchHome()
+        //patchComments()
     }
 
 
@@ -63,7 +63,7 @@ final class HomeViewController: BaseUIViewController {
                 print("흔들림 감지됨: \(self.shakeCount)")
             }
 
-            homeView.homeProgressView.configure(currentSteps: shakeCount, totalSteps: 100)
+            homeView.homeProgressView.configure(currentSteps: 50-shakeCount, totalSteps: 50, walkCount: shakeCount)
             homeView.homeWalkView.configure(count: shakeCount)
         }
     }
@@ -78,9 +78,22 @@ extension HomeViewController {
         HomeService().getHomeStep(userID: 1) { result in
             switch result {
             case .success(let stepInfo):
-                print("총 걸음 수: \(stepInfo.totalStep), 방문한 섬 수: \(stepInfo.islandCount)")
-                // View 갱신코드 넣어야지
-                self.homeView.homeWalkView.configure(count: stepInfo.totalStep)
+                self.shakeCount = stepInfo.totalStep
+
+                /// 다음 섬까지 남은 걸음 수 (50 간격)
+                let distancePerIsland = 50
+                let remainingSteps = distancePerIsland - (self.shakeCount % distancePerIsland)
+
+                print("총 걸음 수: \(self.shakeCount), 섬 수: \(stepInfo.islandCount), 남은 걸음: \(remainingSteps)")
+
+
+                self.homeView.homeWalkView.configure(count: self.shakeCount)
+                self.homeView.homeIslandView.configure(count: stepInfo.islandCount)
+//                self.homeView.homeProgressView.configure(
+//                    currentSteps: remainingSteps,
+//                    totalSteps: distancePerIsland
+//                )
+
             case .requestErr:
                 print("요청 에러 (400번대)")
             case .pathErr:
@@ -92,8 +105,9 @@ extension HomeViewController {
             }
         }
     }
-
 }
+
+
 
 extension HomeViewController {
     private func patchComments() {

@@ -9,16 +9,10 @@ import Foundation
 
 struct HomeStepResponse: Codable {
     let success: Bool
-    let data: StepInfo?
-    let error: APIError?
+    let data: StepInfo
 }
 
 struct StepInfo: Codable {
     let totalStep: Int
     let islandCount: Int
-}
-
-struct APIError: Codable {
-    let code: Int
-    let message: String
 }
