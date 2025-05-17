@@ -70,3 +70,26 @@ final class HomeViewController: BaseUIViewController {
         motionManager.stopAccelerometerUpdates()
     }
 }
+
+extension HomeViewController {
+    private func patchHome() {
+        HomeService().getHomeStep(userID: 1) { result in
+            switch result {
+            case .success(let stepInfo):
+                print("총 걸음 수: \(stepInfo.totalStep), 방문한 섬 수: \(stepInfo.islandCount)")
+                // View 갱신코드 넣어야지
+                self.homeView.homeWalkView.configure(count: stepInfo.totalStep)
+            case .requestErr:
+                print("요청 에러 (400번대)")
+            case .pathErr:
+                print("경로 에러 (디코딩 실패)")
+            case .serverErr:
+                print("서버 내부 에러")
+            case .networkFail:
+                print("네트워크 연결 실패")
+            }
+        }
+    }
+
+}
+
