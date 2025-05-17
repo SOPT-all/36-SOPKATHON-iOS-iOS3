@@ -10,6 +10,7 @@ import Moya
 
 enum CommentsAPI {
     case getIslandComments(islandId: Int)
+    case postIslandComment(islandId: Int, comment: PostCommentRequest)
 }
 
 extension CommentsAPI: BaseTargetType {
@@ -17,16 +18,28 @@ extension CommentsAPI: BaseTargetType {
     var path: String {
         switch self {
         case .getIslandComments(let islandId):
-            return "/islands/comments/\(islandId)" 
+            return "/islands/comments/\(islandId)"
+        case .postIslandComment(let islandId, _):
+            return "/islands/\(islandId)/comments"
         }
     }
 
     var method: Moya.Method {
-        return .get
+        switch self {
+        case .getIslandComments:
+            return .get
+        case .postIslandComment:
+            return .post
+        }
     }
 
     var task: Task {
-        return .requestPlain
+        switch self {
+        case .getIslandComments:
+            return .requestPlain
+        case .postIslandComment(_, let comment):
+            return .requestJSONEncodable(comment)
+        }
     }
 
     var headers: [String : String]? {
@@ -34,11 +47,27 @@ extension CommentsAPI: BaseTargetType {
     }
 }
 
+
 // MARK: - Service
 
 final class CommentsService {
 
     private let provider = MoyaProvider<CommentsAPI>(plugins: [MoyaLoggerPlugin()])
+
+    func postComment(islandId: Int, request: PostCommentRequest, completion: @escaping (NetworkResult<Void>) -> Void) {
+        provider.request(.postIslandComment(islandId: islandId, comment: request)) { result in
+            switch result {
+            case .success(let response):
+                if (200..<300).contains(response.statusCode) {
+                    completion(.success(()))  // 응답 바디 없음
+                } else {
+//                    completion(.requestErr)
+                }
+            case .failure:
+                completion(.networkFail)
+            }
+        }
+    }
 
     func fetchComments(for islandId: Int, completion: @escaping (NetworkResult<[IslandComment]>) -> Void) {
         provider.request(.getIslandComments(islandId: islandId)) { result in
