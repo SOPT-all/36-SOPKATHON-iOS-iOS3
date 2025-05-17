@@ -201,7 +201,7 @@ final class MapView: BaseUIView {
     }
     
     @objc private func button1Tap() {
-        customPopUp.number = 1
+        customPopUp.number = walkNum
         self.addSubview(customPopUp)
         customPopUp.snp.makeConstraints {
             $0.center.equalToSuperview()
@@ -210,7 +210,7 @@ final class MapView: BaseUIView {
         }
     }
     @objc private func button2Tap() {
-        customPopUp.number = 2
+        customPopUp.number = walkNum
         self.addSubview(customPopUp)
         customPopUp.snp.makeConstraints {
             $0.center.equalToSuperview()
