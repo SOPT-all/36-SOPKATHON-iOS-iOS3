@@ -8,34 +8,164 @@
 import UIKit
 import SnapKit
 
-class MoreDetailViewController: BaseUIViewController {
-    private var textFieldViewBottomConstraint: Constraint?
+final class MoreDetailViewController: BaseUIViewController {
+    // MARK: - UI Components
 
-    private let scrollView = UIScrollView()
-    private let contentView = UIView()
-    private let textFieldView = MoreDetailTextFieldView()
-    private let spaceView = UIView().then{
-        $0.backgroundColor = .white
+    private let tableView = UITableView().then {
+        $0.separatorStyle = .none
+        $0.showsVerticalScrollIndicator = false
+        $0.backgroundColor = .gray100
+        $0.estimatedRowHeight = 80
+        $0.rowHeight = UITableView.automaticDimension
     }
-    private let typeContentView = UIView().then{
+
+    private let textFieldView = MoreDetailTextFieldView()
+    private var textFieldBottomConstraint: Constraint?
+
+    private var comments: [DetailModel] = DetailModel.dummy()
+
+    // MARK: - Life Cycle
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        configureTableHeaderView()
+    }
+
+    // MARK: - Base Methods
+
+    override func setUI() {
+        view.addSubviews(tableView, textFieldView, spaceView)
+        tableView.register(DetailTableViewCell.self,
+                           forCellReuseIdentifier: DetailTableViewCell.identifier)
+    }
+
+    override func setLayout() {
+        tableView.snp.makeConstraints {
+            $0.top.leading.trailing.equalTo(view.safeAreaLayoutGuide)
+            $0.bottom.equalTo(textFieldView.snp.top)
+        }
+
+        textFieldView.snp.makeConstraints {
+            $0.leading.trailing.equalToSuperview()
+            $0.height.equalTo(58)
+            textFieldBottomConstraint = $0.bottom.equalTo(view.safeAreaLayoutGuide).constraint
+        }
+        spaceView.snp.makeConstraints {
+            $0.bottom.equalToSuperview()
+            $0.height.equalTo(34)
+        }
+    }
+
+    override func setDelegate() {
+        tableView.dataSource = self
+        tableView.delegate   = self
+    }
+
+    override func addTarget() {
+        NotificationCenter.default.addObserver(
+            self,
+            selector: #selector(keyboardWillShow(_:)),
+            name: UIResponder.keyboardWillShowNotification,
+            object: nil
+        )
+        NotificationCenter.default.addObserver(
+            self,
+            selector: #selector(keyboardWillHide(_:)),
+            name: UIResponder.keyboardWillHideNotification,
+            object: nil
+        )
+    }
+
+    // MARK: - Header 구성
+
+    private func configureTableHeaderView() {
+        let header = UIView()
+        header.backgroundColor = .gray100
+
+        header.addSubviews(
+            typeContentView,
+            islandLabel,
+            detailContentView
+        )
+        typeContentView.addSubview(typeLabel)
+        detailContentView.addSubview(detailLabel)
+
+        typeContentView.snp.makeConstraints {
+            $0.top.equalToSuperview().offset(20)
+            $0.leading.equalToSuperview().inset(24)
+            $0.size.equalTo(CGSize(width: 37, height: 25))
+        }
+        typeLabel.snp.makeConstraints { $0.edges.equalToSuperview().inset(4) }
+
+        islandLabel.snp.makeConstraints {
+            $0.top.equalTo(typeContentView.snp.bottom).offset(16)
+            $0.leading.equalToSuperview().inset(24)
+        }
+
+        detailContentView.snp.makeConstraints {
+            $0.top.equalTo(islandLabel.snp.bottom).offset(20)
+            $0.leading.trailing.equalToSuperview().inset(24)
+            $0.bottom.equalToSuperview().inset(20)
+        }
+        detailLabel.snp.makeConstraints {
+            $0.edges.equalToSuperview().inset(UIEdgeInsets(top:24, left:17, bottom:24, right:24))
+        }
+
+        let targetWidth = UIScreen.main.bounds.width
+        let fittingSize = header.systemLayoutSizeFitting(
+            CGSize(width: targetWidth, height: UIView.layoutFittingCompressedSize.height),
+            withHorizontalFittingPriority: .required,
+            verticalFittingPriority: .fittingSizeLevel
+        )
+        header.frame = CGRect(origin: .zero, size: fittingSize)
+        tableView.tableHeaderView = header
+    }
+
+    // MARK: - Keyboard Handling
+
+    @objc private func keyboardWillShow(_ n: Notification) {
+        guard
+            let frame = n.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? CGRect,
+            let duration = n.userInfo?[UIResponder.keyboardAnimationDurationUserInfoKey] as? Double
+        else { return }
+
+        textFieldBottomConstraint?.update(offset: -frame.height + 34)
+        UIView.animate(withDuration: duration) {
+            self.view.layoutIfNeeded()
+        }
+    }
+
+    @objc private func keyboardWillHide(_ n: Notification) {
+        guard let duration = n.userInfo?[UIResponder.keyboardAnimationDurationUserInfoKey] as? Double
+        else { return }
+
+        textFieldBottomConstraint?.update(offset: 0)
+        UIView.animate(withDuration: duration) {
+            self.view.layoutIfNeeded()
+        }
+    }
+
+    // MARK: - 재사용할 Header UI (이전 코드 그대로)
+
+    private let typeContentView = UIView().then {
         $0.backgroundColor = .orange800
         $0.layer.cornerRadius = 12.5
     }
-    private let typeLabel = UILabel().then{
-        $0.textColor = .white
-        $0.font = .pretendard(.pretendardSemiBold, size: 12)
+    private let typeLabel = UILabel().then {
         $0.text = "관광"
+        $0.font = .pretendard(.pretendardSemiBold, size: 12)
+        $0.textColor = .white
     }
-    private let islandLabel = UILabel().then{
-        $0.textColor = .black
-        $0.font = .pretendard(.pretendardSemiBold, size: 32)
+    private let islandLabel = UILabel().then {
         $0.text = "퍼플섬"
+        $0.font = .pretendard(.pretendardSemiBold, size: 32)
+        $0.textColor = .black
     }
-    private let detailContentView = UIView().then{
+    private let detailContentView = UIView().then {
         $0.backgroundColor = .white
         $0.layer.cornerRadius = 16
     }
-    private let detailLabel = UILabel().then{
+    private let detailLabel = UILabel().then {
         $0.numberOfLines = 0
         $0.text = """
             "라벤더 꽃망울 톡 박지도"
@@ -49,97 +179,24 @@ class MoreDetailViewController: BaseUIViewController {
         $0.font = .pretendard(.pretendardRegular, size: 16)
         $0.textColor = .black
     }
-    
-    // MARK: - Custom Method
-
-    override func setUI() {
-        view.addSubviews(scrollView, textFieldView, spaceView)
-        scrollView.addSubviews(contentView)
-        contentView.addSubviews(
-            typeContentView,
-            islandLabel,
-            detailContentView
-        )
-        typeContentView.addSubview(typeLabel)
-        detailContentView.addSubview(detailLabel)
+    private let spaceView = UIView().then {
+        $0.backgroundColor = .white
     }
+}
 
-    override func setLayout() {
-        scrollView.snp.makeConstraints {
-            $0.top.leading.trailing.equalToSuperview()
-            $0.bottom.equalTo(textFieldView.snp.top)
-        }
-        contentView.snp.makeConstraints {
-            $0.edges.equalToSuperview()
-            $0.width.equalToSuperview()
-        }
-        typeContentView.snp.makeConstraints{
-            $0.leading.equalToSuperview().inset(24)
-            $0.height.equalTo(25)
-            $0.width.equalTo(37)
-            $0.top.equalTo(view.safeAreaLayoutGuide).inset(62)
-        }
-        typeLabel.snp.makeConstraints{
-            $0.leading.trailing.equalToSuperview().inset(8)
-            $0.top.bottom.equalToSuperview().inset(4)
-        }
-        islandLabel.snp.makeConstraints{
-            $0.leading.equalToSuperview().inset(24)
-            $0.top.equalTo(typeContentView.snp.bottom).offset(16)
-        }
-        detailContentView.snp.makeConstraints{
-            $0.top.equalTo(islandLabel.snp.bottom).offset(20)
-            $0.leading.trailing.equalToSuperview().inset(24)
-        }
-        detailLabel.snp.makeConstraints{
-            $0.top.bottom.equalToSuperview().inset(24)
-            $0.leading.equalToSuperview().inset(17)
-            $0.trailing.equalToSuperview().inset(24)
-        }
-        
-        textFieldView.snp.makeConstraints{
-            $0.leading.trailing.equalToSuperview()
-            $0.height.equalTo(58)
-            self.textFieldViewBottomConstraint = $0.bottom.equalTo(view.safeAreaLayoutGuide).constraint
-        }
-        spaceView.snp.makeConstraints{
-            $0.leading.trailing.equalToSuperview()
-            $0.height.equalTo(34)
-            $0.bottom.equalToSuperview()
-        }
+// MARK: - UITableViewDataSource & Delegate
+
+extension MoreDetailViewController: UITableViewDataSource, UITableViewDelegate {
+    func tableView(_ tv: UITableView, numberOfRowsInSection s: Int) -> Int {
+        return comments.count
     }
-
-    // MARK: - Action Method
-
-    override func addTarget() {
-        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(_:)), name: UIResponder.keyboardWillShowNotification, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(_:)), name: UIResponder.keyboardWillHideNotification, object: nil)
-    }
-
-    // MARK: - delegate Method
-
-    override func setDelegate() {}
-    
-    @objc func keyboardWillShow(_ notification: Notification) {
-        guard let keyboardFrame = notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? CGRect,
-              let duration = notification.userInfo?[UIResponder.keyboardAnimationDurationUserInfoKey] as? Double else { return }
-
-        let keyboardHeight = keyboardFrame.height
-
-        textFieldViewBottomConstraint?.update(offset: -keyboardHeight + 34)
-
-        UIView.animate(withDuration: duration) {
-            self.view.layoutIfNeeded()
-        }
-    }
-
-    @objc func keyboardWillHide(_ notification: Notification) {
-        guard let duration = notification.userInfo?[UIResponder.keyboardAnimationDurationUserInfoKey] as? Double else { return }
-
-        textFieldViewBottomConstraint?.update(offset: 0)
-
-        UIView.animate(withDuration: duration) {
-            self.view.layoutIfNeeded()
-        }
+    func tableView(_ tv: UITableView,
+                   cellForRowAt ip: IndexPath) -> UITableViewCell {
+        let cell = tv.dequeueReusableCell(
+            withIdentifier: DetailTableViewCell.identifier,
+            for: ip
+        ) as! DetailTableViewCell
+        cell.dataBind(comments[ip.row])
+        return cell
     }
 }

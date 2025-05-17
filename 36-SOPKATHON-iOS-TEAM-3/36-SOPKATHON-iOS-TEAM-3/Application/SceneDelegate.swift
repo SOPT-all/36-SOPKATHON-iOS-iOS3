@@ -22,7 +22,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         ])
 
 
-        let vc = appViewController
+        let vc = MoreDetailViewController()
         let navigationController = UINavigationController(rootViewController: vc) // 네비게이션 컨트롤러 추가
         
         let window = UIWindow(windowScene: windowScene)
