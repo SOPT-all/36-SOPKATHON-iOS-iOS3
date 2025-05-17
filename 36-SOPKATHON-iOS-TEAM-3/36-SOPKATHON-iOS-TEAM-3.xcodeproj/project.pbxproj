@@ -41,6 +41,8 @@
 		E52EF5112DD90F4400812460 /* AppViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E52EF5102DD90F4400812460 /* AppViewController.swift */; };
 		E52EF5132DD9152D00812460 /* TestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E52EF5122DD9152D00812460 /* TestView.swift */; };
 		E52EF5152DD91E0A00812460 /* HomeDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = E52EF5142DD91E0A00812460 /* HomeDTO.swift */; };
+		E52EF5182DD92A3800812460 /* CommentsAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = E52EF5172DD92A3800812460 /* CommentsAPI.swift */; };
+		E52EF51A2DD92A4C00812460 /* CommentsDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = E52EF5192DD92A4C00812460 /* CommentsDTO.swift */; };
 		E5B8BED52DD89C7300C6164C /* BaseUIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5B8BED42DD89C7300C6164C /* BaseUIViewController.swift */; };
 		E5B8BED72DD89C7A00C6164C /* BaseUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5B8BED62DD89C7A00C6164C /* BaseUIView.swift */; };
 		E5B8BEED2DD89D1B00C6164C /* UIViewController+.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5B8BEEC2DD89D1B00C6164C /* UIViewController+.swift */; };
@@ -91,6 +93,8 @@
 		E52EF5102DD90F4400812460 /* AppViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppViewController.swift; sourceTree = "<group>"; };
 		E52EF5122DD9152D00812460 /* TestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestView.swift; sourceTree = "<group>"; };
 		E52EF5142DD91E0A00812460 /* HomeDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeDTO.swift; sourceTree = "<group>"; };
+		E52EF5172DD92A3800812460 /* CommentsAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentsAPI.swift; sourceTree = "<group>"; };
+		E52EF5192DD92A4C00812460 /* CommentsDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentsDTO.swift; sourceTree = "<group>"; };
 		E5B8BED42DD89C7300C6164C /* BaseUIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseUIViewController.swift; sourceTree = "<group>"; };
 		E5B8BED62DD89C7A00C6164C /* BaseUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseUIView.swift; sourceTree = "<group>"; };
 		E5B8BEEC2DD89D1B00C6164C /* UIViewController+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+.swift"; sourceTree = "<group>"; };
@@ -346,6 +350,7 @@
 			isa = PBXGroup;
 			children = (
 				E5B8BF012DD8C86B00C6164C /* HomeAPI.swift */,
+				E52EF5172DD92A3800812460 /* CommentsAPI.swift */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -354,6 +359,7 @@
 			isa = PBXGroup;
 			children = (
 				E52EF5142DD91E0A00812460 /* HomeDTO.swift */,
+				E52EF5192DD92A4C00812460 /* CommentsDTO.swift */,
 			);
 			path = DTO;
 			sourceTree = "<group>";
@@ -507,6 +513,7 @@
 				092F48FD2DD904770062379A /* DetailViewController.swift in Sources */,
 				094DB43E2DD8E9E800E0F4A7 /* TabbarController.swift in Sources */,
 				E5B8BEFC2DD8C6D900C6164C /* BaseTargetType.swift in Sources */,
+				E52EF5182DD92A3800812460 /* CommentsAPI.swift in Sources */,
 				E5B8BED72DD89C7A00C6164C /* BaseUIView.swift in Sources */,
 				E52EF5132DD9152D00812460 /* TestView.swift in Sources */,
 				331424BC2DD7A41B00EBDBDB /* UIStackView+.swift in Sources */,
@@ -523,6 +530,7 @@
 				E52EF50F2DD8FA0B00812460 /* HomeWalkView.swift in Sources */,
 				331424A52DD7A10600EBDBDB /* HomeViewController.swift in Sources */,
 				E5B8BEFE2DD8C75300C6164C /* NetworkResult.swift in Sources */,
+				E52EF51A2DD92A4C00812460 /* CommentsDTO.swift in Sources */,
 				094DB4422DD8F93700E0F4A7 /* UIImage+.swift in Sources */,
 				E52EF50B2DD8E3A400812460 /* HomeProgressView.swift in Sources */,
 				33C8B1DE2DD924C700BA6141 /* DetailTableViewCell.swift in Sources */,

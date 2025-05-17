@@ -23,7 +23,8 @@ final class HomeViewController: BaseUIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         startWalking()
-        patchHome()
+        //patchHome()
+        patchComments()
     }
 
 
@@ -94,3 +95,21 @@ extension HomeViewController {
 
 }
 
+extension HomeViewController {
+    private func patchComments() {
+        CommentsService().fetchComments(for: 1) { result in
+            switch result {
+            case .success(let comments):
+                comments.forEach { print("\($0.command)") }
+            case .requestErr:
+                print("요청 에러")
+            case .pathErr:
+                print("디코딩 에러")
+            case .serverErr:
+                print("서버 에러")
+            case .networkFail:
+                print("네트워크 오류")
+            }
+        }
+    }
+}
