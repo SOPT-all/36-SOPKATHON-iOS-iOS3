@@ -9,15 +9,18 @@ import UIKit
 
 struct DetailModel {
     let comment: String
-}
-extension DetailModel {
-    static func dummy() -> [DetailModel] {
-        return [
-            DetailModel(comment: "흥미롭네요"),
-            DetailModel(comment: "흥미롭네요"),
-            DetailModel(comment: "흥미롭네요"),
-            DetailModel(comment: "흥미롭네요"),
-            DetailModel(comment: "흥미롭네요")
-        ]
+    init(from islandComment: IslandComment) {
+        self.comment = islandComment.comment ?? ""
     }
 }
+//extension DetailModel {
+//    static func dummy() -> [DetailModel] {
+//        return [
+//            DetailModel(comment: "흥미롭네요"),
+//            DetailModel(comment: "흥미롭네요"),
+//            DetailModel(comment: "흥미롭네요"),
+//            DetailModel(comment: "흥미롭네요"),
+//            DetailModel(comment: "흥미롭네요")
+//        ]
+//    }
+//}

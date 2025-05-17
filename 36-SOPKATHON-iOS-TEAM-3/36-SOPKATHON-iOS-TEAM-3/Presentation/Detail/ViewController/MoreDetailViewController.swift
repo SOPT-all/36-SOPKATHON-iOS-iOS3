@@ -11,24 +11,51 @@ import SnapKit
 final class MoreDetailViewController: BaseUIViewController {
     // MARK: - UI Components
 
+    private let titleLabel = UILabel().then{
+        $0.text = "유저 코멘트"
+        $0.font = .pretendard(.pretendardMedium, size: 16)
+        $0.textColor = .black
+    }
+    
     private let tableView = UITableView().then {
         $0.separatorStyle = .none
+        $0.backgroundColor = .clear
         $0.showsVerticalScrollIndicator = false
-        $0.backgroundColor = .gray100
-        $0.estimatedRowHeight = 80
-        $0.rowHeight = UITableView.automaticDimension
+    }
+//    private let chatList = DetailModel.dummy()
+    private var comments: [DetailModel] = []
+    private let commentsService = CommentsService()
+    private let islandId = 1
+    
+    private func fetchComments() {
+        commentsService.fetchComments(for: islandId) { [weak self] result in
+            switch result {
+            case .success(let islandComments):
+                let detailModels = islandComments.map { DetailModel(from: $0) }
+                self?.comments = detailModels
+                DispatchQueue.main.async {
+                    self?.tableView.reloadData()
+                }
+            case .pathErr:
+                print("경로 에러")
+            case .networkFail:
+                print("네트워크 실패")
+            default:
+                break
+            }
+        }
     }
 
     private let textFieldView = MoreDetailTextFieldView()
     private var textFieldBottomConstraint: Constraint?
 
-    private var comments: [DetailModel] = DetailModel.dummy()
 
     // MARK: - Life Cycle
 
     override func viewDidLoad() {
         super.viewDidLoad()
         configureTableHeaderView()
+        fetchComments()
     }
 
     // MARK: - Base Methods

@@ -19,13 +19,17 @@ class DetailTableView: UIView {
         $0.backgroundColor = .clear
         $0.showsVerticalScrollIndicator = false
     }
-    private let chatList = DetailModel.dummy()
+//    private let chatList = DetailModel.dummy()
+    private var comments: [DetailModel] = []
+    private let commentsService = CommentsService()
+    private let islandId = 1
     
     override init(frame: CGRect) {
         super.init(frame: frame)
         setUI()
         setLayout()
         setDelegate()
+        fetchComments()
     }
     
     required init?(coder: NSCoder) {
@@ -54,18 +58,37 @@ class DetailTableView: UIView {
         tableView.delegate = self
         tableView.dataSource = self
     }
+    
+    private func fetchComments() {
+        commentsService.fetchComments(for: islandId) { [weak self] result in
+            switch result {
+            case .success(let islandComments):
+                let detailModels = islandComments.map { DetailModel(from: $0) }
+                self?.comments = detailModels
+                DispatchQueue.main.async {
+                    self?.tableView.reloadData()
+                }
+            case .pathErr:
+                print("경로 에러")
+            case .networkFail:
+                print("네트워크 실패")
+            default:
+                break
+            }
+        }
+    }
 }
 
 extension DetailTableView: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return chatList.count
+        return comments.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "DetailTableViewCell", for: indexPath) as? DetailTableViewCell else {
             return UITableViewCell()
         }
-        cell.dataBind(chatList[indexPath.row])
+        cell.dataBind(comments[indexPath.row])
         return cell
     }
 }
