@@ -11,11 +11,15 @@ import Then
 
 final class MapView: BaseUIView {
     
+    private var walkNum: Int = 105
+    
     private let mapImageView = UIImageView().then {
         $0.image = .map
     }
     
-    private let button1 = CircleButton().then {
+    private let customPopUp = CustomPopUpView()
+    
+    private lazy var button1 = CircleButton().then {
         $0.text = "1"
     }
     
@@ -54,6 +58,75 @@ final class MapView: BaseUIView {
     private let button10 = CircleButton().then {
         $0.text = "10"
     }
+    
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+
+        activateButton()
+        self.isUserInteractionEnabled = true
+    }
+    
+    @MainActor required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    
+    
+    func activateButton() {
+        
+        if walkNum >= 50 {
+            button1.updateStateUI()
+            button1.addTarget(self, action: #selector(button1Tap), for: .touchUpInside)
+            button1.isUserInteractionEnabled = true
+        }
+        if walkNum >= 100 {
+            button2.updateStateUI()
+            button2.addTarget(self, action: #selector(button2Tap), for: .touchUpInside)
+            button2.isUserInteractionEnabled = true
+        }
+        if walkNum >= 150 {
+            button3.updateStateUI()
+            button3.addTarget(self, action: #selector(button1Tap), for: .touchUpInside)
+            button3.isUserInteractionEnabled = true
+        }
+        if walkNum >= 200 {
+            button4.updateStateUI()
+            button4.addTarget(self, action: #selector(button2Tap), for: .touchUpInside)
+            button4.isUserInteractionEnabled = true
+        }
+        if walkNum >= 250 {
+            button5.updateStateUI()
+            button5.addTarget(self, action: #selector(button1Tap), for: .touchUpInside)
+            button5.isUserInteractionEnabled = true
+        }
+        if walkNum >= 300 {
+            button6.updateStateUI()
+            button6.addTarget(self, action: #selector(button2Tap), for: .touchUpInside)
+            button6.isUserInteractionEnabled = true
+        }
+        if walkNum >= 350 {
+            button7.updateStateUI()
+            button7.addTarget(self, action: #selector(button1Tap), for: .touchUpInside)
+            button7.isUserInteractionEnabled = true
+        }
+        if walkNum >= 400 {
+            button8.updateStateUI()
+            button8.addTarget(self, action: #selector(button2Tap), for: .touchUpInside)
+            button8.isUserInteractionEnabled = true
+        }
+        if walkNum >= 450 {
+            button9.updateStateUI()
+            button9.addTarget(self, action: #selector(button1Tap), for: .touchUpInside)
+            button9.isUserInteractionEnabled = true
+        }
+        if walkNum >= 500 {
+            button10.updateStateUI()
+            button10.addTarget(self, action: #selector(button2Tap), for: .touchUpInside)
+            button10.isUserInteractionEnabled = true
+        }
+    }
+    
+    
     
     override func setUI() {
         self.addSubviews(
@@ -127,5 +200,23 @@ final class MapView: BaseUIView {
         }
     }
     
+    @objc private func button1Tap() {
+        customPopUp.number = 1
+        self.addSubview(customPopUp)
+        customPopUp.snp.makeConstraints {
+            $0.center.equalToSuperview()
+            $0.width.equalTo(281)
+            $0.height.equalTo(340)
+        }
+    }
+    @objc private func button2Tap() {
+        customPopUp.number = 2
+        self.addSubview(customPopUp)
+        customPopUp.snp.makeConstraints {
+            $0.center.equalToSuperview()
+            $0.width.equalTo(281)
+            $0.height.equalTo(340)
+        }
+    }
     
 }
