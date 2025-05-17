@@ -29,7 +29,6 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             TestViewController()
         ])
         
-        
         let rootVC = appViewController
         
         // 스플래시 화면 2초 노출
