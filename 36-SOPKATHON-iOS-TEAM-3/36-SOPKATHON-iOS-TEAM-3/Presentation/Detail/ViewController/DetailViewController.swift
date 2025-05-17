@@ -24,7 +24,7 @@ final class DetailViewController: BaseUIViewController {
     // stack1 + description
     private var detailStackView2 = UIStackView()
     
-    private let islandMainImageView = UIImageView()
+    private var islandMainImageView = UIImageView()
     private let islandSubImageView1 = UIImageView()
     private let islandSubImageView2 = UIImageView()
     
@@ -51,6 +51,8 @@ final class DetailViewController: BaseUIViewController {
         setStyle()
         setUI()
         setLayout()
+        
+        patchIslandInfo()
     }
     override func viewWillAppear(_ animated: Bool) {
         navigationController?.navigationBar.isHidden = false
@@ -59,6 +61,8 @@ final class DetailViewController: BaseUIViewController {
     
     
     private func setStyle() {
+        
+        view.backgroundColor = .white
         
         islandNameLabel.do {
             $0.text = "퍼플섬"
@@ -86,17 +90,14 @@ final class DetailViewController: BaseUIViewController {
             $0.distribution = .fill
         }
         
-        islandSubImageView1.do {
-            $0.image = .homeIcon // TODO: 변경 필요
-        }
-        
-        islandSubImageView2.do {
-            $0.image = .mapIcon // TODO: 변경 필요
-        }
-        
-        islandMainImageView.do {
-            $0.image = .mapIcon
-        }
+//        islandSubImageView1.do {
+//        }
+//        
+//        islandSubImageView2.do {
+//        }
+//        
+//        islandMainImageView.do {
+//        }
         
         imageStackView.do {
             $0.axis = .vertical
@@ -119,7 +120,7 @@ final class DetailViewController: BaseUIViewController {
             $0.textColor = .black
             $0.textAlignment = .center
             $0.font = .pretendard(.pretendardRegular, size: 14)
-            $0.numberOfLines = 3
+            $0.numberOfLines = 8
         }
         
         categoryStackView.do {
@@ -136,6 +137,7 @@ final class DetailViewController: BaseUIViewController {
             $0.layer.cornerRadius = 10
             $0.layer.borderWidth = 1
             $0.layer.borderColor = UIColor.orange800.cgColor
+            $0.addTarget(self, action: #selector(didTapMoreDetailButton), for: .touchUpInside)
         }
         
         [detailStackView1, detailStackView2, detailStackView3].forEach {
@@ -211,6 +213,20 @@ final class DetailViewController: BaseUIViewController {
             $0.leading.trailing.equalToSuperview().inset(60)
         }
         
+        islandMainImageView.snp.makeConstraints {
+            $0.width.equalTo(230)
+        }
+        
+        islandSubImageView1.snp.makeConstraints {
+            $0.width.equalTo(110)
+            $0.height.equalTo(67)
+        }
+        
+        islandSubImageView2.snp.makeConstraints {
+            $0.width.equalTo(110)
+            $0.height.equalTo(67)
+        }
+        
         categoryPaddingView1.snp.makeConstraints {
             $0.width.equalTo(94)
         }
@@ -230,4 +246,54 @@ final class DetailViewController: BaseUIViewController {
             $0.centerX.equalToSuperview()
         }
     }
+    
+    @objc private func didTapMoreDetailButton() {
+        let moreDetailVC = MoreDetailViewController()
+
+        // 예시 데이터 전달 (모델 또는 단일 값 등)
+//        moreDetailVC.islandName = islandNameLabel.text
+//        moreDetailVC.islandDescription = islandDescriptionLabel.text
+//        moreDetailVC.image = islandMainImageView.image // UIImage 전달 예시
+
+        self.navigationController?.pushViewController(moreDetailVC, animated: true)
+    }
+}
+
+extension DetailViewController {
+    private func patchIslandInfo() {
+        IslandInfoService().getIslandInfo(steps: steps, category: category.label) { result in
+            switch result {
+            case .success(let result):
+                self.islandNameLabel.text = result.name
+                if result.name == "퍼플섬" {
+                    self.islandLocationLabel.text = "전남 신안군 안좌면 소곡리 599-4"
+                } else {
+                    self.islandLocationLabel.text = "전남 고흥군 금산면 대신로 276"
+                }
+                self.islandDescriptionLabel.text = result.island_description
+                
+                if result.name == "퍼플섬" {
+                    self.islandMainImageView.image = .island11
+                    self.islandSubImageView1.image = .island12
+                    self.islandSubImageView2.image = .island13
+                } else {
+                    self.islandMainImageView.image = .island21
+                    self.islandSubImageView1.image = .island22
+                    self.islandSubImageView2.image = .island23
+                }
+                
+                self.categoryDescriptionLabel.text = result.category_description
+                
+            case .requestErr:
+                print("요청 에러")
+            case .pathErr:
+                print("디코딩 에러")
+            case .serverErr:
+                print("서버 에러")
+            case .networkFail:
+                print("네트워크 오류")
+            }
+        }
+    }
+
 }

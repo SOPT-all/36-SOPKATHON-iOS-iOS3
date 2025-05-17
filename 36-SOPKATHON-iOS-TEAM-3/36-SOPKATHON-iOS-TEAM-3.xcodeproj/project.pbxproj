@@ -10,6 +10,8 @@
 		092F48FD2DD904770062379A /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 092F48FC2DD9045C0062379A /* DetailViewController.swift */; };
 		092F49952DD918720062379A /* DetailCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 092F49942DD9186D0062379A /* DetailCategory.swift */; };
 		092F499C2DD927200062379A /* LaunchScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 092F499B2DD927140062379A /* LaunchScreen.swift */; };
+		092F499E2DD9440F0062379A /* IslandInfoAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 092F499D2DD944030062379A /* IslandInfoAPI.swift */; };
+		092F49A02DD945E30062379A /* IslandInfoDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 092F499F2DD945D40062379A /* IslandInfoDTO.swift */; };
 		094DB43E2DD8E9E800E0F4A7 /* TabbarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 094DB43D2DD8E9D000E0F4A7 /* TabbarController.swift */; };
 		094DB4422DD8F93700E0F4A7 /* UIImage+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 094DB4412DD8F93200E0F4A7 /* UIImage+.swift */; };
 		331424A02DD7A10600EBDBDB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 331424992DD7A10600EBDBDB /* Assets.xcassets */; };
@@ -64,6 +66,8 @@
 		092F48FC2DD9045C0062379A /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		092F49942DD9186D0062379A /* DetailCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailCategory.swift; sourceTree = "<group>"; };
 		092F499B2DD927140062379A /* LaunchScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchScreen.swift; sourceTree = "<group>"; };
+		092F499D2DD944030062379A /* IslandInfoAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IslandInfoAPI.swift; sourceTree = "<group>"; };
+		092F499F2DD945D40062379A /* IslandInfoDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IslandInfoDTO.swift; sourceTree = "<group>"; };
 		094DB43D2DD8E9D000E0F4A7 /* TabbarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabbarController.swift; sourceTree = "<group>"; };
 		094DB4412DD8F93200E0F4A7 /* UIImage+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+.swift"; sourceTree = "<group>"; };
 		3314247C2DD79DC200EBDBDB /* 36-SOPKATHON-iOS-TEAM-3.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "36-SOPKATHON-iOS-TEAM-3.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -354,6 +358,7 @@
 			isa = PBXGroup;
 			children = (
 				E5B8BF012DD8C86B00C6164C /* HomeAPI.swift */,
+				092F499D2DD944030062379A /* IslandInfoAPI.swift */,
 				E52EF5172DD92A3800812460 /* CommentsAPI.swift */,
 				E52EF51B2DD9448A00812460 /* CommentsPostAPI.swift */,
 			);
@@ -364,6 +369,7 @@
 			isa = PBXGroup;
 			children = (
 				E52EF5142DD91E0A00812460 /* HomeDTO.swift */,
+				092F499F2DD945D40062379A /* IslandInfoDTO.swift */,
 				E52EF5192DD92A4C00812460 /* CommentsDTO.swift */,
 				E52EF51D2DD9449900812460 /* CommentsPostDTO.swift */,
 			);
@@ -501,6 +507,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E52EF5112DD90F4400812460 /* AppViewController.swift in Sources */,
+				092F499E2DD9440F0062379A /* IslandInfoAPI.swift in Sources */,
 				E5B8BF002DD8C79500C6164C /* GenericResponse.swift in Sources */,
 				092F499C2DD927200062379A /* LaunchScreen.swift in Sources */,
 				F689AA4D2DD922FB001D6B56 /* MapViewController.swift in Sources */,
@@ -541,6 +548,7 @@
 				E52EF51A2DD92A4C00812460 /* CommentsDTO.swift in Sources */,
 				094DB4422DD8F93700E0F4A7 /* UIImage+.swift in Sources */,
 				E52EF50B2DD8E3A400812460 /* HomeProgressView.swift in Sources */,
+				092F49A02DD945E30062379A /* IslandInfoDTO.swift in Sources */,
 				33C8B1DE2DD924C700BA6141 /* DetailTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -29,7 +29,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             MapViewController()
         ])
         
-        let rootVC = appViewController
+        let rootVC = DetailViewController()
         
         // 스플래시 화면 2초 노출
         DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
