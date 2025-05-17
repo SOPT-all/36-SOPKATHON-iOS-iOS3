@@ -12,6 +12,7 @@ import Then
 
 final class DetailViewController: UIViewController {
     
+    var islandNum: Int = 0
     var category: DetailCategory = .food
     
     private let islandNameLabel = UILabel()
@@ -224,8 +225,4 @@ final class DetailViewController: UIViewController {
             $0.centerX.equalToSuperview()
         }
     }
-}
-
-#Preview {
-    DetailViewController()
 }

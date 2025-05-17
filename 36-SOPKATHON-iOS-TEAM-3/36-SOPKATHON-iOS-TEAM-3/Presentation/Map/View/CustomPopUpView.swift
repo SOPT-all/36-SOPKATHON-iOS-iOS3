@@ -81,15 +81,43 @@ final class CustomPopUpView: BaseUIView {
     }
     
     @objc func foodTap() {
-        
+        let detailVC = DetailViewController()
+        if let vc = self.parentViewController() {
+            vc.navigationController?.pushViewController(detailVC, animated: true)
+        }
+        detailVC.islandNum = number
+        detailVC.category = DetailCategory.food
     }
     
     @objc func cultureTap() {
-        
+        let detailVC = DetailViewController()
+        if let vc = self.parentViewController() {
+            vc.navigationController?.pushViewController(detailVC, animated: true)
+        }
+        detailVC.islandNum = number
+        detailVC.category = DetailCategory.culture
     }
     
     @objc func tourTap() {
-        
+        let detailVC = DetailViewController()
+        if let vc = self.parentViewController() {
+            vc.navigationController?.pushViewController(detailVC, animated: true)
+        }
+        detailVC.islandNum = number
+        detailVC.category = DetailCategory.tour
     }
     
+}
+
+extension UIView {
+    func parentViewController() -> UIViewController? {
+        var responder: UIResponder? = self
+        while let nextResponder = responder?.next {
+            if let viewController = nextResponder as? UIViewController {
+                return viewController
+            }
+            responder = nextResponder
+        }
+        return nil
+    }
 }
