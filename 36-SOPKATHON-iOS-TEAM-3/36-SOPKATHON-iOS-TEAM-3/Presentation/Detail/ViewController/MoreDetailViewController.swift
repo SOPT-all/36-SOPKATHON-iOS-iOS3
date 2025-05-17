@@ -22,7 +22,7 @@ final class MoreDetailViewController: BaseUIViewController {
     private let textFieldView = MoreDetailTextFieldView()
     private var textFieldBottomConstraint: Constraint?
 
-    private var comments: [DetailModel] = DetailModel.dummy()
+    private var comments: [DetailModel] = []
 
     // MARK: - Life Cycle
 
