@@ -14,7 +14,7 @@
 		331424A22DD7A10600EBDBDB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3314249C2DD7A10600EBDBDB /* LaunchScreen.storyboard */; };
 		331424A32DD7A10600EBDBDB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 331424982DD7A10600EBDBDB /* AppDelegate.swift */; };
 		331424A42DD7A10600EBDBDB /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3314249D2DD7A10600EBDBDB /* SceneDelegate.swift */; };
-		331424A52DD7A10600EBDBDB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3314249E2DD7A10600EBDBDB /* ViewController.swift */; };
+		331424A52DD7A10600EBDBDB /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3314249E2DD7A10600EBDBDB /* HomeViewController.swift */; };
 		331424B82DD7A39E00EBDBDB /* UIView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 331424B72DD7A39700EBDBDB /* UIView+.swift */; };
 		331424BA2DD7A3E600EBDBDB /* UITableViewCell+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 331424B92DD7A3E400EBDBDB /* UITableViewCell+.swift */; };
 		331424BC2DD7A41B00EBDBDB /* UIStackView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 331424BB2DD7A41500EBDBDB /* UIStackView+.swift */; };
@@ -26,6 +26,7 @@
 		331424CA2DD7A68900EBDBDB /* Pretendard-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 331424C92DD7A68900EBDBDB /* Pretendard-Bold.otf */; };
 		33D382B02DD81EC700F04C42 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 33D382AF2DD81EC700F04C42 /* SnapKit */; };
 		33D382B32DD81ED300F04C42 /* Then in Frameworks */ = {isa = PBXBuildFile; productRef = 33D382B22DD81ED300F04C42 /* Then */; };
+		E52EF4F52DD8DB1800812460 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E52EF4F42DD8DB1800812460 /* HomeView.swift */; };
 		E5B8BED52DD89C7300C6164C /* BaseUIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5B8BED42DD89C7300C6164C /* BaseUIViewController.swift */; };
 		E5B8BED72DD89C7A00C6164C /* BaseUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5B8BED62DD89C7A00C6164C /* BaseUIView.swift */; };
 		E5B8BEED2DD89D1B00C6164C /* UIViewController+.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5B8BEEC2DD89D1B00C6164C /* UIViewController+.swift */; };
@@ -47,7 +48,7 @@
 		3314249A2DD7A10600EBDBDB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3314249B2DD7A10600EBDBDB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3314249D2DD7A10600EBDBDB /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		3314249E2DD7A10600EBDBDB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		3314249E2DD7A10600EBDBDB /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		331424B72DD7A39700EBDBDB /* UIView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+.swift"; sourceTree = "<group>"; };
 		331424B92DD7A3E400EBDBDB /* UITableViewCell+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableViewCell+.swift"; sourceTree = "<group>"; };
 		331424BB2DD7A41500EBDBDB /* UIStackView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStackView+.swift"; sourceTree = "<group>"; };
@@ -57,6 +58,7 @@
 		331424C52DD7A67600EBDBDB /* Pretendard-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Medium.otf"; sourceTree = "<group>"; };
 		331424C72DD7A67F00EBDBDB /* Pretendard-SemiBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-SemiBold.otf"; sourceTree = "<group>"; };
 		331424C92DD7A68900EBDBDB /* Pretendard-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Bold.otf"; sourceTree = "<group>"; };
+		E52EF4F42DD8DB1800812460 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		E5B8BED42DD89C7300C6164C /* BaseUIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseUIViewController.swift; sourceTree = "<group>"; };
 		E5B8BED62DD89C7A00C6164C /* BaseUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseUIView.swift; sourceTree = "<group>"; };
 		E5B8BEEC2DD89D1B00C6164C /* UIViewController+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+.swift"; sourceTree = "<group>"; };
@@ -101,7 +103,6 @@
 			isa = PBXGroup;
 			children = (
 				3314249F2DD7A10600EBDBDB /* 36-SOPKATHON-iOS-TEAM-3 */,
-				3314249E2DD7A10600EBDBDB /* ViewController.swift */,
 				3314247D2DD79DC200EBDBDB /* Products */,
 			);
 			sourceTree = "<group>";
@@ -227,6 +228,7 @@
 		331424D12DD7A85D00EBDBDB /* View */ = {
 			isa = PBXGroup;
 			children = (
+				E52EF4F42DD8DB1800812460 /* HomeView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -234,7 +236,7 @@
 		331424D22DD7A86300EBDBDB /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
-				094DB4342DD8DF8200E0F4A7 /* HomeViewController.swift */,
+				3314249E2DD7A10600EBDBDB /* HomeViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -372,7 +374,7 @@
 				331424A32DD7A10600EBDBDB /* AppDelegate.swift in Sources */,
 				331424BE2DD7A45500EBDBDB /* UICollectionViewCell+.swift in Sources */,
 				331424BA2DD7A3E600EBDBDB /* UITableViewCell+.swift in Sources */,
-				094DB4352DD8DF8700E0F4A7 /* HomeViewController.swift in Sources */,
+				E52EF4F52DD8DB1800812460 /* HomeView.swift in Sources */,
 				331424A42DD7A10600EBDBDB /* SceneDelegate.swift in Sources */,
 				094DB43C2DD8E02A00E0F4A7 /* MapViewController.swift in Sources */,
 				E5B8BEFC2DD8C6D900C6164C /* BaseTargetType.swift in Sources */,
@@ -383,7 +385,7 @@
 				E5B8BF022DD8C86B00C6164C /* HomeAPI.swift in Sources */,
 				331424B82DD7A39E00EBDBDB /* UIView+.swift in Sources */,
 				E5B8BEF52DD8C5D400C6164C /* MoyaLoggerPlugin.swift in Sources */,
-				331424A52DD7A10600EBDBDB /* ViewController.swift in Sources */,
+				331424A52DD7A10600EBDBDB /* HomeViewController.swift in Sources */,
 				E5B8BEFE2DD8C75300C6164C /* NetworkResult.swift in Sources */,
 				094DB4332DD8DDD000E0F4A7 /* TabbarController.swift in Sources */,
 			);
