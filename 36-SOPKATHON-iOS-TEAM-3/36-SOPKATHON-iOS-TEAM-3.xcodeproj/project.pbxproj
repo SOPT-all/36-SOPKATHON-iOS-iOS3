@@ -26,6 +26,12 @@
 		E5B8BED52DD89C7300C6164C /* BaseUIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5B8BED42DD89C7300C6164C /* BaseUIViewController.swift */; };
 		E5B8BED72DD89C7A00C6164C /* BaseUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5B8BED62DD89C7A00C6164C /* BaseUIView.swift */; };
 		E5B8BEED2DD89D1B00C6164C /* UIViewController+.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5B8BEEC2DD89D1B00C6164C /* UIViewController+.swift */; };
+		E5B8BEF52DD8C5D400C6164C /* MoyaLoggerPlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5B8BEF42DD8C5D400C6164C /* MoyaLoggerPlugin.swift */; };
+		E5B8BEF82DD8C61500C6164C /* Moya in Frameworks */ = {isa = PBXBuildFile; productRef = E5B8BEF72DD8C61500C6164C /* Moya */; };
+		E5B8BEFC2DD8C6D900C6164C /* BaseTargetType.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5B8BEFB2DD8C6D900C6164C /* BaseTargetType.swift */; };
+		E5B8BEFE2DD8C75300C6164C /* NetworkResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5B8BEFD2DD8C75300C6164C /* NetworkResult.swift */; };
+		E5B8BF002DD8C79500C6164C /* GenericResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5B8BEFF2DD8C79500C6164C /* GenericResponse.swift */; };
+		E5B8BF022DD8C86B00C6164C /* HomeAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5B8BF012DD8C86B00C6164C /* HomeAPI.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,6 +54,11 @@
 		E5B8BED42DD89C7300C6164C /* BaseUIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseUIViewController.swift; sourceTree = "<group>"; };
 		E5B8BED62DD89C7A00C6164C /* BaseUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseUIView.swift; sourceTree = "<group>"; };
 		E5B8BEEC2DD89D1B00C6164C /* UIViewController+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+.swift"; sourceTree = "<group>"; };
+		E5B8BEF42DD8C5D400C6164C /* MoyaLoggerPlugin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoyaLoggerPlugin.swift; sourceTree = "<group>"; };
+		E5B8BEFB2DD8C6D900C6164C /* BaseTargetType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTargetType.swift; sourceTree = "<group>"; };
+		E5B8BEFD2DD8C75300C6164C /* NetworkResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkResult.swift; sourceTree = "<group>"; };
+		E5B8BEFF2DD8C79500C6164C /* GenericResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenericResponse.swift; sourceTree = "<group>"; };
+		E5B8BF012DD8C86B00C6164C /* HomeAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeAPI.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,6 +68,7 @@
 			files = (
 				33D382B02DD81EC700F04C42 /* SnapKit in Frameworks */,
 				33D382B32DD81ED300F04C42 /* Then in Frameworks */,
+				E5B8BEF82DD8C61500C6164C /* Moya in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -156,6 +168,9 @@
 		331424CB2DD7A79C00EBDBDB /* Network */ = {
 			isa = PBXGroup;
 			children = (
+				E5B8BEF22DD8C5B700C6164C /* API */,
+				E5B8BEF12DD8C5B200C6164C /* Common */,
+				E5B8BEF32DD8C5C000C6164C /* DTO */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -208,6 +223,40 @@
 			path = Base;
 			sourceTree = "<group>";
 		};
+		E5B8BEF12DD8C5B200C6164C /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				E5B8BEF92DD8C63B00C6164C /* Foundation */,
+				E5B8BEF42DD8C5D400C6164C /* MoyaLoggerPlugin.swift */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		E5B8BEF22DD8C5B700C6164C /* API */ = {
+			isa = PBXGroup;
+			children = (
+				E5B8BF012DD8C86B00C6164C /* HomeAPI.swift */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
+		E5B8BEF32DD8C5C000C6164C /* DTO */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = DTO;
+			sourceTree = "<group>";
+		};
+		E5B8BEF92DD8C63B00C6164C /* Foundation */ = {
+			isa = PBXGroup;
+			children = (
+				E5B8BEFB2DD8C6D900C6164C /* BaseTargetType.swift */,
+				E5B8BEFD2DD8C75300C6164C /* NetworkResult.swift */,
+				E5B8BEFF2DD8C79500C6164C /* GenericResponse.swift */,
+			);
+			path = Foundation;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -227,6 +276,7 @@
 			packageProductDependencies = (
 				33D382AF2DD81EC700F04C42 /* SnapKit */,
 				33D382B22DD81ED300F04C42 /* Then */,
+				E5B8BEF72DD8C61500C6164C /* Moya */,
 			);
 			productName = "36-SOPKATHON-iOS-TEAM-3";
 			productReference = 3314247C2DD79DC200EBDBDB /* 36-SOPKATHON-iOS-TEAM-3.app */;
@@ -259,6 +309,7 @@
 			packageReferences = (
 				33D382AE2DD81EC700F04C42 /* XCRemoteSwiftPackageReference "SnapKit" */,
 				33D382B12DD81ED300F04C42 /* XCRemoteSwiftPackageReference "Then" */,
+				E5B8BEF62DD8C61500C6164C /* XCRemoteSwiftPackageReference "Moya" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 3314247D2DD79DC200EBDBDB /* Products */;
@@ -291,17 +342,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E5B8BF002DD8C79500C6164C /* GenericResponse.swift in Sources */,
 				331424C02DD7A4F400EBDBDB /* UIFont+.swift in Sources */,
 				331424A32DD7A10600EBDBDB /* AppDelegate.swift in Sources */,
 				331424BE2DD7A45500EBDBDB /* UICollectionViewCell+.swift in Sources */,
 				331424BA2DD7A3E600EBDBDB /* UITableViewCell+.swift in Sources */,
 				331424A42DD7A10600EBDBDB /* SceneDelegate.swift in Sources */,
+				E5B8BEFC2DD8C6D900C6164C /* BaseTargetType.swift in Sources */,
 				E5B8BED72DD89C7A00C6164C /* BaseUIView.swift in Sources */,
 				331424BC2DD7A41B00EBDBDB /* UIStackView+.swift in Sources */,
 				E5B8BED52DD89C7300C6164C /* BaseUIViewController.swift in Sources */,
 				E5B8BEED2DD89D1B00C6164C /* UIViewController+.swift in Sources */,
+				E5B8BF022DD8C86B00C6164C /* HomeAPI.swift in Sources */,
 				331424B82DD7A39E00EBDBDB /* UIView+.swift in Sources */,
+				E5B8BEF52DD8C5D400C6164C /* MoyaLoggerPlugin.swift in Sources */,
 				331424A52DD7A10600EBDBDB /* ViewController.swift in Sources */,
+				E5B8BEFE2DD8C75300C6164C /* NetworkResult.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -326,12 +382,14 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = C9XX799UJH;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "36-SOPKATHON-iOS-TEAM-3/Application/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -352,12 +410,14 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = C9XX799UJH;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "36-SOPKATHON-iOS-TEAM-3/Application/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -530,6 +590,14 @@
 				minimumVersion = 3.0.0;
 			};
 		};
+		E5B8BEF62DD8C61500C6164C /* XCRemoteSwiftPackageReference "Moya" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Moya/Moya";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 15.0.3;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -542,6 +610,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 33D382B12DD81ED300F04C42 /* XCRemoteSwiftPackageReference "Then" */;
 			productName = Then;
+		};
+		E5B8BEF72DD8C61500C6164C /* Moya */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E5B8BEF62DD8C61500C6164C /* XCRemoteSwiftPackageReference "Moya" */;
+			productName = Moya;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
