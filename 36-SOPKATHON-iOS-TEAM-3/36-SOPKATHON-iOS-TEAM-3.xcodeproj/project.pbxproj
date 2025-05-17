@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		092F48FD2DD904770062379A /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 092F48FC2DD9045C0062379A /* DetailViewController.swift */; };
+		092F49952DD918720062379A /* DetailCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 092F49942DD9186D0062379A /* DetailCategory.swift */; };
 		094DB43E2DD8E9E800E0F4A7 /* TabbarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 094DB43D2DD8E9D000E0F4A7 /* TabbarController.swift */; };
 		094DB4422DD8F93700E0F4A7 /* UIImage+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 094DB4412DD8F93200E0F4A7 /* UIImage+.swift */; };
 		331424A02DD7A10600EBDBDB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 331424992DD7A10600EBDBDB /* Assets.xcassets */; };
@@ -46,6 +48,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		092F48FC2DD9045C0062379A /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		092F49942DD9186D0062379A /* DetailCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailCategory.swift; sourceTree = "<group>"; };
 		094DB43D2DD8E9D000E0F4A7 /* TabbarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabbarController.swift; sourceTree = "<group>"; };
 		094DB4412DD8F93200E0F4A7 /* UIImage+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+.swift"; sourceTree = "<group>"; };
 		3314247C2DD79DC200EBDBDB /* 36-SOPKATHON-iOS-TEAM-3.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "36-SOPKATHON-iOS-TEAM-3.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -97,6 +101,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		092F49932DD918680062379A /* Enum */ = {
+			isa = PBXGroup;
+			children = (
+				092F49942DD9186D0062379A /* DetailCategory.swift */,
+			);
+			path = Enum;
+			sourceTree = "<group>";
+		};
 		331424732DD79DC200EBDBDB = {
 			isa = PBXGroup;
 			children = (
@@ -251,6 +263,7 @@
 			children = (
 				33C8B1742DD8FBBC00BA6141 /* ViewController */,
 				33C8B1732DD8FBB200BA6141 /* View */,
+				092F49932DD918680062379A /* Enum */,
 			);
 			path = Detail;
 			sourceTree = "<group>";
@@ -267,6 +280,7 @@
 			isa = PBXGroup;
 			children = (
 				33C8B1752DD8FF9600BA6141 /* MoreDetailViewController.swift */,
+				092F48FC2DD9045C0062379A /* DetailViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -408,6 +422,7 @@
 				E52EF50D2DD8F6E300812460 /* HomeIslandView.swift in Sources */,
 				E52EF4F52DD8DB1800812460 /* HomeView.swift in Sources */,
 				331424A42DD7A10600EBDBDB /* SceneDelegate.swift in Sources */,
+				092F48FD2DD904770062379A /* DetailViewController.swift in Sources */,
 				094DB43E2DD8E9E800E0F4A7 /* TabbarController.swift in Sources */,
 				E5B8BEFC2DD8C6D900C6164C /* BaseTargetType.swift in Sources */,
 				E5B8BED72DD89C7A00C6164C /* BaseUIView.swift in Sources */,
@@ -416,6 +431,7 @@
 				E5B8BED52DD89C7300C6164C /* BaseUIViewController.swift in Sources */,
 				33C8B17C2DD9052D00BA6141 /* UITextField+.swift in Sources */,
 				E5B8BEED2DD89D1B00C6164C /* UIViewController+.swift in Sources */,
+				092F49952DD918720062379A /* DetailCategory.swift in Sources */,
 				33C8B1762DD8FF9600BA6141 /* MoreDetailViewController.swift in Sources */,
 				33C8B17A2DD9006400BA6141 /* MoreDetailTextFieldView.swift in Sources */,
 				E5B8BF022DD8C86B00C6164C /* HomeAPI.swift in Sources */,
