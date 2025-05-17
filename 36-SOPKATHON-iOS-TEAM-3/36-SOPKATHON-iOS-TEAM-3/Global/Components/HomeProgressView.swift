@@ -102,7 +102,7 @@ final class HomeProgressView: BaseUIView {
 
         stepLabel.text = "\(currentSteps)"
 
-        let progressRatio = CGFloat(min(max(walkCount, 0), totalSteps)) / CGFloat(totalSteps)
+        let progressRatio = CGFloat(walkCount % totalSteps) / CGFloat(totalSteps)
         let fullWidth = progressBackgroundView.frame.width
 
         progressBarView.snp.remakeConstraints {
