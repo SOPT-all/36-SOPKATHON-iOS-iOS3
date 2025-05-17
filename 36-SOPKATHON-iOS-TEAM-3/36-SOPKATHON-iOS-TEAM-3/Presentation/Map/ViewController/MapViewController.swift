@@ -13,13 +13,17 @@ final class MapViewController: BaseUIViewController {
     
     private let mapView = MapView()
     
+    private let popUpView = CustomPopUpView().then {
+        $0.layer.cornerRadius = 17
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
     }
     
     override func setUI() {
-        view.backgroundColor = .blue100
+        view.backgroundColor = .gray100
         view.addSubviews(
             mapView
         )
@@ -27,9 +31,9 @@ final class MapViewController: BaseUIViewController {
     
     override func setLayout() {
         mapView.snp.makeConstraints {
-            $0.top.equalTo(view.safeAreaLayoutGuide).inset(78)
+            $0.top.equalTo(view.safeAreaLayoutGuide).inset(24)
             $0.horizontalEdges.equalToSuperview()
-            $0.bottom.equalTo(view.safeAreaLayoutGuide).inset(142)
+            $0.bottom.equalTo(view.safeAreaLayoutGuide).inset(88)
         }
     }
     
