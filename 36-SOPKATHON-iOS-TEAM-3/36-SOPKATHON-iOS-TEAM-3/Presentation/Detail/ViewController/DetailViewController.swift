@@ -12,7 +12,7 @@ import Then
 
 final class DetailViewController: BaseUIViewController {
     
-    var islandNum: Int = 0
+    var steps: Int = 0
     var category: DetailCategory = .food
     
     private let islandNameLabel = UILabel()

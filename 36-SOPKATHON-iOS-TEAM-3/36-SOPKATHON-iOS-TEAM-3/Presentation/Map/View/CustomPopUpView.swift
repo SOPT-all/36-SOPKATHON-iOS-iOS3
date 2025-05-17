@@ -85,7 +85,7 @@ final class CustomPopUpView: BaseUIView {
         if let vc = self.parentViewController() {
             vc.navigationController?.pushViewController(detailVC, animated: true)
         }
-        detailVC.islandNum = number
+        detailVC.steps = number
         detailVC.category = DetailCategory.food
     }
     
@@ -94,7 +94,7 @@ final class CustomPopUpView: BaseUIView {
         if let vc = self.parentViewController() {
             vc.navigationController?.pushViewController(detailVC, animated: true)
         }
-        detailVC.islandNum = number
+        detailVC.steps = number
         detailVC.category = DetailCategory.culture
     }
     
@@ -103,7 +103,7 @@ final class CustomPopUpView: BaseUIView {
         if let vc = self.parentViewController() {
             vc.navigationController?.pushViewController(detailVC, animated: true)
         }
-        detailVC.islandNum = number
+        detailVC.steps = number
         detailVC.category = DetailCategory.tour
     }
     
