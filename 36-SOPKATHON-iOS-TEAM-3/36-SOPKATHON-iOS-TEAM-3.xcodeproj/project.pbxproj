@@ -558,7 +558,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = C9XX799UJH;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "36-SOPKATHON-iOS-TEAM-3/Application/Info.plist";
 				INFOPLIST_KEY_NSMotionUsageDescription = "만보기 기능을 사용할려면, 권한을 허용해주세용";
@@ -588,7 +588,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = C9XX799UJH;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "36-SOPKATHON-iOS-TEAM-3/Application/Info.plist";
 				INFOPLIST_KEY_NSMotionUsageDescription = "만보기 기능을 사용할려면, 권한을 허용해주세용";
