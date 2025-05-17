@@ -24,19 +24,19 @@ final class HomeProgressView: BaseUIView {
 
     private let descriptionLabel = UILabel().then {
         $0.text = "다음 섬까지"
-        $0.font = .systemFont(ofSize: 20, weight: .medium)
+        $0.font = .systemFont(ofSize: 14, weight: .medium)
         $0.textColor = .black
     }
 
     private let stepLabel = UILabel().then {
         $0.text = "0"
-        $0.font = .boldSystemFont(ofSize: 40)
+        $0.font = .boldSystemFont(ofSize: 32)
         $0.textColor = .orange800
     }
 
     private let stepUnitLabel = UILabel().then {
         $0.text = "걸음"
-        $0.font = .boldSystemFont(ofSize: 40)
+        $0.font = .boldSystemFont(ofSize: 22)
         $0.textColor = .black
     }
 
@@ -66,7 +66,7 @@ final class HomeProgressView: BaseUIView {
         }
 
         descriptionLabel.snp.makeConstraints {
-            $0.top.equalToSuperview().inset(24)
+            $0.top.equalToSuperview().inset(20)
             $0.leading.equalToSuperview().inset(24)
         }
 
@@ -81,7 +81,7 @@ final class HomeProgressView: BaseUIView {
         }
 
         progressBackgroundView.snp.makeConstraints {
-            $0.top.equalTo(stepLabel.snp.bottom).offset(24)
+            $0.top.equalTo(stepLabel.snp.bottom).offset(8)
             $0.leading.trailing.equalToSuperview().inset(24)
             $0.height.equalTo(10)
             $0.bottom.equalToSuperview().inset(24)
