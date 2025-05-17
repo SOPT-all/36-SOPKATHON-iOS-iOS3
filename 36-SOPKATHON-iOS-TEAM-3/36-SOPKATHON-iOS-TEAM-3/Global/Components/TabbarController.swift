@@ -56,18 +56,18 @@ final class TabbarController: UIView {
         
         homeButton.do {
             var configuration = UIButton.Configuration.plain()
-            if #available(iOS 15.0, *) {
-                configuration.image = .homeIcon
-                    .resize(targetSize: CGSize(width: 24, height: 24))
-                    .withRenderingMode(.alwaysTemplate)
-                configuration.imagePadding = 2
-                configuration.imagePlacement = .top
-                configuration.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 0)
-                let title = AttributedString("홈", attributes: AttributeContainer([
-                    .font: UIFont.systemFont(ofSize: 12, weight: .semibold)
-                ]))
-                configuration.attributedTitle = title
-            }
+            
+            configuration.image = .homeIcon
+                .resize(targetSize: CGSize(width: 24, height: 24))
+                .withRenderingMode(.alwaysTemplate)
+            configuration.imagePadding = 2
+            configuration.imagePlacement = .top
+            configuration.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 0)
+            let title = AttributedString("홈", attributes: AttributeContainer([
+                .font: UIFont.systemFont(ofSize: 12, weight: .semibold)
+            ]))
+            configuration.attributedTitle = title
+            
             $0.configuration = configuration
             $0.tintColor = .gray
 
@@ -79,18 +79,17 @@ final class TabbarController: UIView {
         
         mapButton.do {
             var configuration = UIButton.Configuration.plain()
-            if #available(iOS 15.0, *) {
-                configuration.image = .mapIcon
-                    .resize(targetSize: CGSize(width: 24, height: 24))
-                    .withRenderingMode(.alwaysTemplate)
-                configuration.imagePadding = 2
-                configuration.imagePlacement = .top
-                configuration.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 0)
-                let title = AttributedString("도감", attributes: AttributeContainer([
-                    .font: UIFont.systemFont(ofSize: 12, weight: .semibold)
-                ]))
-                configuration.attributedTitle = title
-            }
+            configuration.image = .mapIcon
+                .resize(targetSize: CGSize(width: 24, height: 24))
+                .withRenderingMode(.alwaysTemplate)
+            configuration.imagePadding = 2
+            configuration.imagePlacement = .top
+            configuration.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 0)
+            let title = AttributedString("도감", attributes: AttributeContainer([
+                .font: UIFont.systemFont(ofSize: 12, weight: .semibold)
+            ]))
+            configuration.attributedTitle = title
+            
             $0.configuration = configuration
             $0.tintColor = .gray
         }
