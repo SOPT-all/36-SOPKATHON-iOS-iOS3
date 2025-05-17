@@ -24,7 +24,6 @@ final class HomeViewController: BaseUIViewController {
         super.viewDidLoad()
         startWalking()
         patchHome()
-        //patchComments()
     }
 
 
@@ -102,27 +101,6 @@ extension HomeViewController {
                 print("서버 내부 에러")
             case .networkFail:
                 print("네트워크 연결 실패")
-            }
-        }
-    }
-}
-
-
-
-extension HomeViewController {
-    private func patchComments() {
-        CommentsService().fetchComments(for: 1) { result in
-            switch result {
-            case .success(let comments):
-                comments.forEach { print("\($0.comment)") }
-            case .requestErr:
-                print("요청 에러")
-            case .pathErr:
-                print("디코딩 에러")
-            case .serverErr:
-                print("서버 에러")
-            case .networkFail:
-                print("네트워크 오류")
             }
         }
     }
