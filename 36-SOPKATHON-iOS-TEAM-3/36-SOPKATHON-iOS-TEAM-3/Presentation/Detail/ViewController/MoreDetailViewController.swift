@@ -53,7 +53,6 @@ class MoreDetailViewController: BaseUIViewController {
     // MARK: - Custom Method
 
     override func setUI() {
-//        view.backgroundColor = .cyan
         view.addSubviews(scrollView, textFieldView, spaceView)
         scrollView.addSubviews(contentView)
         contentView.addSubviews(
@@ -101,7 +100,7 @@ class MoreDetailViewController: BaseUIViewController {
         textFieldView.snp.makeConstraints{
             $0.leading.trailing.equalToSuperview()
             $0.height.equalTo(58)
-            self.textFieldViewBottomConstraint = $0.bottom.equalTo(spaceView.snp.top).constraint
+            self.textFieldViewBottomConstraint = $0.bottom.equalTo(view.safeAreaLayoutGuide).constraint
         }
         spaceView.snp.makeConstraints{
             $0.leading.trailing.equalToSuperview()
@@ -127,7 +126,7 @@ class MoreDetailViewController: BaseUIViewController {
 
         let keyboardHeight = keyboardFrame.height
 
-        textFieldViewBottomConstraint?.update(offset: -keyboardHeight)
+        textFieldViewBottomConstraint?.update(offset: -keyboardHeight + 34)
 
         UIView.animate(withDuration: duration) {
             self.view.layoutIfNeeded()
