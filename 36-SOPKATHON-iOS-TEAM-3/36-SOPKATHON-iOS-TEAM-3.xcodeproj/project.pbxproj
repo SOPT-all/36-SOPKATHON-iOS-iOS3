@@ -45,6 +45,10 @@
 		E5B8BEFE2DD8C75300C6164C /* NetworkResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5B8BEFD2DD8C75300C6164C /* NetworkResult.swift */; };
 		E5B8BF002DD8C79500C6164C /* GenericResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5B8BEFF2DD8C79500C6164C /* GenericResponse.swift */; };
 		E5B8BF022DD8C86B00C6164C /* HomeAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5B8BF012DD8C86B00C6164C /* HomeAPI.swift */; };
+		F689AA4D2DD922FB001D6B56 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F689AA4A2DD922FB001D6B56 /* MapViewController.swift */; };
+		F689AA4E2DD922FB001D6B56 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F689AA482DD922FB001D6B56 /* MapView.swift */; };
+		F689AA4F2DD922FB001D6B56 /* CircleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F689AA462DD922FB001D6B56 /* CircleButton.swift */; };
+		F689AA502DD922FB001D6B56 /* CustomPopUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F689AA472DD922FB001D6B56 /* CustomPopUpView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -85,6 +89,10 @@
 		E5B8BEFD2DD8C75300C6164C /* NetworkResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkResult.swift; sourceTree = "<group>"; };
 		E5B8BEFF2DD8C79500C6164C /* GenericResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenericResponse.swift; sourceTree = "<group>"; };
 		E5B8BF012DD8C86B00C6164C /* HomeAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeAPI.swift; sourceTree = "<group>"; };
+		F689AA462DD922FB001D6B56 /* CircleButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleButton.swift; sourceTree = "<group>"; };
+		F689AA472DD922FB001D6B56 /* CustomPopUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomPopUpView.swift; sourceTree = "<group>"; };
+		F689AA482DD922FB001D6B56 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
+		F689AA4A2DD922FB001D6B56 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -219,6 +227,7 @@
 			children = (
 				33C8B1712DD8FB9900BA6141 /* Detail */,
 				E52EF5102DD90F4400812460 /* AppViewController.swift */,
+				F689AA4C2DD922FB001D6B56 /* Map */,
 				331424CF2DD7A84200EBDBDB /* Home */,
 			);
 			path = Presentation;
@@ -328,6 +337,41 @@
 			path = Foundation;
 			sourceTree = "<group>";
 		};
+		F689AA452DD922FB001D6B56 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		F689AA492DD922FB001D6B56 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				F689AA462DD922FB001D6B56 /* CircleButton.swift */,
+				F689AA472DD922FB001D6B56 /* CustomPopUpView.swift */,
+				F689AA482DD922FB001D6B56 /* MapView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		F689AA4B2DD922FB001D6B56 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				F689AA4A2DD922FB001D6B56 /* MapViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		F689AA4C2DD922FB001D6B56 /* Map */ = {
+			isa = PBXGroup;
+			children = (
+				F689AA452DD922FB001D6B56 /* Model */,
+				F689AA492DD922FB001D6B56 /* View */,
+				F689AA4B2DD922FB001D6B56 /* ViewController */,
+			);
+			path = Map;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -415,6 +459,10 @@
 			files = (
 				E52EF5112DD90F4400812460 /* AppViewController.swift in Sources */,
 				E5B8BF002DD8C79500C6164C /* GenericResponse.swift in Sources */,
+				F689AA4D2DD922FB001D6B56 /* MapViewController.swift in Sources */,
+				F689AA4E2DD922FB001D6B56 /* MapView.swift in Sources */,
+				F689AA4F2DD922FB001D6B56 /* CircleButton.swift in Sources */,
+				F689AA502DD922FB001D6B56 /* CustomPopUpView.swift in Sources */,
 				331424C02DD7A4F400EBDBDB /* UIFont+.swift in Sources */,
 				331424A32DD7A10600EBDBDB /* AppDelegate.swift in Sources */,
 				331424BE2DD7A45500EBDBDB /* UICollectionViewCell+.swift in Sources */,
