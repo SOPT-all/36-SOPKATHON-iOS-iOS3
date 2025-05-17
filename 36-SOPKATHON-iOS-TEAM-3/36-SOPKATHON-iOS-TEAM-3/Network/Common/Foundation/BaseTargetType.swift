@@ -15,7 +15,7 @@ extension BaseTargetType{
 
     var baseURL: URL {
         /// 실제 url로 바꿔주세요.
-        return URL(string: "")!
+        return URL(string: "http://43.201.115.250:8080")!
     }
 
     var headers: [String : String]? {

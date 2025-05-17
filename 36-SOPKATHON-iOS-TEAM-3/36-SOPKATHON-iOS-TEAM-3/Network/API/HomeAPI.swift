@@ -5,6 +5,44 @@
 //  Created by 성현주 on 5/17/25.
 //
 
+//import Foundation
+//import Moya
+//
+//enum HomeAPI {
+//    case getHomeStep(userID: Int)
+//}
+//
+//extension HomeAPI: BaseTargetType {
+//
+//    var path: String {
+//        switch self {
+//        case .getHomeStep:
+//            return "/islands/steps"
+//        }
+//    }
+//
+//    var method: Moya.Method {
+//        switch self {
+//        case .getHomeStep:
+//            return .get
+//        }
+//    }
+//
+//
+//    var task: Task {
+//        switch self {
+//        case .getHomeStep(let userID):
+//            return .requestParameters(parameters: ["userId": userID], encoding: URLEncoding.queryString)
+//        }
+//    }
+//
+//    var headers: [String : String]? {
+//        return ["Content-Type": "application/json"]
+//    }
+//}
+
+
+
 import Foundation
 import Moya
 
@@ -16,30 +54,24 @@ extension HomeAPI: BaseTargetType {
 
     var path: String {
         switch self {
-        case .getHomeStep:
-            return "/islands/steps"
+        case .getHomeStep(let userID):
+            return "/islands/steps/\(userID)" 
         }
     }
 
     var method: Moya.Method {
-        switch self {
-        case .getHomeStep:
-            return .get
-        }
+        return .get
     }
 
-
     var task: Task {
-        switch self {
-        case .getHomeStep(let userID):
-            return .requestParameters(parameters: ["userId": userID], encoding: URLEncoding.queryString)
-        }
+        return .requestPlain
     }
 
     var headers: [String : String]? {
         return ["Content-Type": "application/json"]
     }
 }
+
 
 
 final class HomeService {

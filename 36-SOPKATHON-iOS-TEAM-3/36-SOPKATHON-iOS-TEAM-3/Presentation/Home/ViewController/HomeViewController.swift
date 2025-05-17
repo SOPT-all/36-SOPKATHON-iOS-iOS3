@@ -23,6 +23,7 @@ final class HomeViewController: BaseUIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         startWalking()
+        patchHome()
     }
 
 
