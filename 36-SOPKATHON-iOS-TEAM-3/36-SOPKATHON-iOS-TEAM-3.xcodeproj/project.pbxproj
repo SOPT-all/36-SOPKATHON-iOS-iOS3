@@ -25,6 +25,9 @@
 		331424C62DD7A67600EBDBDB /* Pretendard-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 331424C52DD7A67600EBDBDB /* Pretendard-Medium.otf */; };
 		331424C82DD7A67F00EBDBDB /* Pretendard-SemiBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 331424C72DD7A67F00EBDBDB /* Pretendard-SemiBold.otf */; };
 		331424CA2DD7A68900EBDBDB /* Pretendard-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 331424C92DD7A68900EBDBDB /* Pretendard-Bold.otf */; };
+		33C8B1762DD8FF9600BA6141 /* MoreDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33C8B1752DD8FF9600BA6141 /* MoreDetailViewController.swift */; };
+		33C8B17A2DD9006400BA6141 /* MoreDetailTextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33C8B1792DD9006400BA6141 /* MoreDetailTextFieldView.swift */; };
+		33C8B17C2DD9052D00BA6141 /* UITextField+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33C8B17B2DD9052400BA6141 /* UITextField+.swift */; };
 		33D382B02DD81EC700F04C42 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 33D382AF2DD81EC700F04C42 /* SnapKit */; };
 		33D382B32DD81ED300F04C42 /* Then in Frameworks */ = {isa = PBXBuildFile; productRef = 33D382B22DD81ED300F04C42 /* Then */; };
 		E52EF4F52DD8DB1800812460 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E52EF4F42DD8DB1800812460 /* HomeView.swift */; };
@@ -65,6 +68,9 @@
 		331424C52DD7A67600EBDBDB /* Pretendard-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Medium.otf"; sourceTree = "<group>"; };
 		331424C72DD7A67F00EBDBDB /* Pretendard-SemiBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-SemiBold.otf"; sourceTree = "<group>"; };
 		331424C92DD7A68900EBDBDB /* Pretendard-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Bold.otf"; sourceTree = "<group>"; };
+		33C8B1752DD8FF9600BA6141 /* MoreDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreDetailViewController.swift; sourceTree = "<group>"; };
+		33C8B1792DD9006400BA6141 /* MoreDetailTextFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreDetailTextFieldView.swift; sourceTree = "<group>"; };
+		33C8B17B2DD9052400BA6141 /* UITextField+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+.swift"; sourceTree = "<group>"; };
 		E52EF4F42DD8DB1800812460 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		E52EF50A2DD8E3A400812460 /* HomeProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeProgressView.swift; sourceTree = "<group>"; };
 		E52EF50C2DD8F6E300812460 /* HomeIslandView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeIslandView.swift; sourceTree = "<group>"; };
@@ -166,6 +172,7 @@
 		331424AA2DD7A19B00EBDBDB /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				33C8B17B2DD9052400BA6141 /* UITextField+.swift */,
 				094DB4412DD8F93200E0F4A7 /* UIImage+.swift */,
 				331424B72DD7A39700EBDBDB /* UIView+.swift */,
 				331424BB2DD7A41500EBDBDB /* UIStackView+.swift */,
@@ -212,6 +219,7 @@
 			children = (
 				092F49932DD918680062379A /* Enum */,
 				092F48FC2DD9045C0062379A /* DetailViewController.swift */,
+				33C8B1712DD8FB9900BA6141 /* Detail */,
 				E52EF5102DD90F4400812460 /* AppViewController.swift */,
 				331424CF2DD7A84200EBDBDB /* Home */,
 			);
@@ -248,6 +256,31 @@
 			children = (
 				3314249E2DD7A10600EBDBDB /* HomeViewController.swift */,
 				E52EF5122DD9152D00812460 /* TestView.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		33C8B1712DD8FB9900BA6141 /* Detail */ = {
+			isa = PBXGroup;
+			children = (
+				33C8B1742DD8FBBC00BA6141 /* ViewController */,
+				33C8B1732DD8FBB200BA6141 /* View */,
+			);
+			path = Detail;
+			sourceTree = "<group>";
+		};
+		33C8B1732DD8FBB200BA6141 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				33C8B1792DD9006400BA6141 /* MoreDetailTextFieldView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		33C8B1742DD8FBBC00BA6141 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				33C8B1752DD8FF9600BA6141 /* MoreDetailViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -396,8 +429,11 @@
 				E52EF5132DD9152D00812460 /* TestView.swift in Sources */,
 				331424BC2DD7A41B00EBDBDB /* UIStackView+.swift in Sources */,
 				E5B8BED52DD89C7300C6164C /* BaseUIViewController.swift in Sources */,
+				33C8B17C2DD9052D00BA6141 /* UITextField+.swift in Sources */,
 				E5B8BEED2DD89D1B00C6164C /* UIViewController+.swift in Sources */,
 				092F49952DD918720062379A /* DetailCategory.swift in Sources */,
+				33C8B1762DD8FF9600BA6141 /* MoreDetailViewController.swift in Sources */,
+				33C8B17A2DD9006400BA6141 /* MoreDetailTextFieldView.swift in Sources */,
 				E5B8BF022DD8C86B00C6164C /* HomeAPI.swift in Sources */,
 				331424B82DD7A39E00EBDBDB /* UIView+.swift in Sources */,
 				E5B8BEF52DD8C5D400C6164C /* MoyaLoggerPlugin.swift in Sources */,
@@ -430,7 +466,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = C9XX799UJH;
+				DEVELOPMENT_TEAM = "";
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "36-SOPKATHON-iOS-TEAM-3/Application/Info.plist";
 				INFOPLIST_KEY_NSMotionUsageDescription = "만보기 기능을 사용할려면, 권한을 허용해주세용";
@@ -460,7 +496,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = C9XX799UJH;
+				DEVELOPMENT_TEAM = "";
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "36-SOPKATHON-iOS-TEAM-3/Application/Info.plist";
 				INFOPLIST_KEY_NSMotionUsageDescription = "만보기 기능을 사용할려면, 권한을 허용해주세용";
