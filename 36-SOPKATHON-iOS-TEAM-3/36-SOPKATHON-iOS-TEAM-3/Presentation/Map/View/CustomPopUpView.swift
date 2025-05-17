@@ -11,7 +11,7 @@ import Then
 
 final class CustomPopUpView: BaseUIView {
     
-    private var number: Int = 0
+    var number: Int = 0
     
     private let titleLabel = UILabel().then {
         $0.text = "정보 카테고리를 선택하세요"

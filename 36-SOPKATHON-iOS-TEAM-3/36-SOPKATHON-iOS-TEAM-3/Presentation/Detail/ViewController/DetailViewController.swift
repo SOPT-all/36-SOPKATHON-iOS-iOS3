@@ -10,7 +10,7 @@ import UIKit
 import SnapKit
 import Then
 
-final class DetailViewController: UIViewController {
+final class DetailViewController: BaseUIViewController {
     
     var islandNum: Int = 0
     var category: DetailCategory = .food
@@ -47,11 +47,16 @@ final class DetailViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        view.backgroundColor = .white
         setStyle()
         setUI()
         setLayout()
     }
+    override func viewWillAppear(_ animated: Bool) {
+        navigationController?.navigationBar.isHidden = false
+        self.navigationItem.hidesBackButton = false
+    }
+    
     
     private func setStyle() {
         
@@ -151,7 +156,7 @@ final class DetailViewController: UIViewController {
         
     }
     
-    private func setUI() {
+    override func setUI() {
         view.addSubviews(
             detailTotalStackView,
             moreDetailButton
@@ -200,7 +205,7 @@ final class DetailViewController: UIViewController {
 
     }
     
-    private func setLayout() {
+    override func setLayout() {
         detailTotalStackView.snp.makeConstraints {
             $0.top.equalTo(view.safeAreaLayoutGuide).offset(58)
             $0.leading.trailing.equalToSuperview().inset(60)
