@@ -14,6 +14,8 @@ final class HomeView: BaseUIView {
 
     // MARK: - UI Components
 
+    let homeProgressView = HomeProgressView()
+
     let walkLabel = UILabel().then{
         $0.text = "걸음 횟수: 0"
         $0.font = .boldSystemFont(ofSize: 28)
@@ -24,12 +26,16 @@ final class HomeView: BaseUIView {
     //MARK: - Custom Methods
 
     override func setUI() {
-        addSubviews(walkLabel)
+        addSubviews(walkLabel, homeProgressView)
     }
 
     override func setLayout() {
         walkLabel.snp.makeConstraints {
             $0.center.equalToSuperview()
+        }
+        homeProgressView.snp.makeConstraints {
+            $0.top.equalTo(walkLabel.snp.bottom).offset(20)
+            $0.horizontalEdges.equalToSuperview().inset(10)
         }
     }
 

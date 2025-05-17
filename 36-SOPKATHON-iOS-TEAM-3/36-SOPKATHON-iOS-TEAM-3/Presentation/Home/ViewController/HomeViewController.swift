@@ -62,6 +62,8 @@ final class HomeViewController: BaseUIViewController {
                 self.homeView.walkLabel.text = "걸음 횟수: \(self.shakeCount)"
                 print("흔들림 감지됨: \(self.shakeCount)")
             }
+
+            homeView.homeProgressView.configure(currentSteps: shakeCount, totalSteps: 100)
         }
     }
 
