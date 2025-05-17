@@ -11,36 +11,41 @@ import Then
 
 final class CustomPopUpView: BaseUIView {
     
+    private var number: Int = 0
+    
     private let titleLabel = UILabel().then {
         $0.text = "정보 카테고리를 선택하세요"
         $0.font = .pretendard(.pretendardBold, size: 18)
     }
     
-    private let foodButton = UIButton().then {
+    private lazy var foodButton = UIButton().then {
         $0.setTitle("음식", for: .normal)
         $0.setTitleColor(.black, for: .normal)
         $0.setTitleColor(.white, for: .selected)
         $0.titleLabel?.font = .pretendard(.pretendardBold, size: 18)
         $0.backgroundColor = .gray100
         $0.layer.cornerRadius = 12
+        $0.addTarget(self, action: #selector(foodTap), for: .touchUpInside)
     }
     
-    private let cultureButton = UIButton().then {
+    private lazy var cultureButton = UIButton().then {
         $0.setTitle("문화", for: .normal)
         $0.setTitleColor(.black, for: .normal)
         $0.setTitleColor(.white, for: .selected)
         $0.titleLabel?.font = .pretendard(.pretendardBold, size: 18)
         $0.backgroundColor = .gray100
         $0.layer.cornerRadius = 12
+        $0.addTarget(self, action: #selector(cultureTap), for: .touchUpInside)
     }
     
-    private let tourButton = UIButton().then {
+    private lazy var tourButton = UIButton().then {
         $0.setTitle("관광", for: .normal)
         $0.setTitleColor(.black, for: .normal)
         $0.setTitleColor(.white, for: .selected)
         $0.titleLabel?.font = .pretendard(.pretendardBold, size: 18)
         $0.backgroundColor = .gray100
         $0.layer.cornerRadius = 12
+        $0.addTarget(self, action: #selector(tourTap), for: .touchUpInside)
     }
     
     override func setUI() {
@@ -75,4 +80,44 @@ final class CustomPopUpView: BaseUIView {
         }
     }
     
+    @objc func foodTap() {
+        let detailVC = DetailViewController()
+        if let vc = self.parentViewController() {
+            vc.navigationController?.pushViewController(detailVC, animated: true)
+        }
+        detailVC.islandNum = number
+        detailVC.category = DetailCategory.food
+    }
+    
+    @objc func cultureTap() {
+        let detailVC = DetailViewController()
+        if let vc = self.parentViewController() {
+            vc.navigationController?.pushViewController(detailVC, animated: true)
+        }
+        detailVC.islandNum = number
+        detailVC.category = DetailCategory.culture
+    }
+    
+    @objc func tourTap() {
+        let detailVC = DetailViewController()
+        if let vc = self.parentViewController() {
+            vc.navigationController?.pushViewController(detailVC, animated: true)
+        }
+        detailVC.islandNum = number
+        detailVC.category = DetailCategory.tour
+    }
+    
+}
+
+extension UIView {
+    func parentViewController() -> UIViewController? {
+        var responder: UIResponder? = self
+        while let nextResponder = responder?.next {
+            if let viewController = nextResponder as? UIViewController {
+                return viewController
+            }
+            responder = nextResponder
+        }
+        return nil
+    }
 }
