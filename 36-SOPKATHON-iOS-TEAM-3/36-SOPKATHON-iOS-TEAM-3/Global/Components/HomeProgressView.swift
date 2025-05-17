@@ -17,7 +17,7 @@ final class HomeProgressView: BaseUIView {
     // MARK: - UI Components
 
     private let containerView = UIView().then {
-        $0.backgroundColor = .gray
+        $0.backgroundColor = .white
         $0.layer.cornerRadius = 24
         $0.clipsToBounds = true
     }
@@ -29,8 +29,9 @@ final class HomeProgressView: BaseUIView {
     }
 
     private let stepLabel = UILabel().then {
+        $0.text = "0"
         $0.font = .boldSystemFont(ofSize: 40)
-        $0.textColor = .orange
+        $0.textColor = .orange800
     }
 
     private let stepUnitLabel = UILabel().then {
@@ -40,7 +41,7 @@ final class HomeProgressView: BaseUIView {
     }
 
     private let progressBackgroundView = UIView().then {
-        $0.backgroundColor = .lightGray
+        $0.backgroundColor = .gray100
         $0.layer.cornerRadius = 5
         $0.clipsToBounds = true
     }

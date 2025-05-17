@@ -6,37 +6,43 @@
 //
 
 import UIKit
-import Then
-import SnapKit
 
+import SnapKit
+import Then
 
 final class HomeView: BaseUIView {
 
     // MARK: - UI Components
 
     let homeProgressView = HomeProgressView()
+    let homeIslandView = HomeIslandView()
+    let homeWalkView = HomeWalkView()
 
-    let walkLabel = UILabel().then{
-        $0.text = "걸음 횟수: 0"
-        $0.font = .boldSystemFont(ofSize: 28)
-        $0.textColor = .black
-        $0.textAlignment = .center
-    }
-
-    //MARK: - Custom Methods
+    // MARK: - Custom Methods
 
     override func setUI() {
-        addSubviews(walkLabel, homeProgressView)
+        addSubviews(homeProgressView, homeIslandView, homeWalkView)
     }
 
     override func setLayout() {
-        walkLabel.snp.makeConstraints {
-            $0.center.equalToSuperview()
-        }
         homeProgressView.snp.makeConstraints {
-            $0.top.equalTo(walkLabel.snp.bottom).offset(20)
-            $0.horizontalEdges.equalToSuperview().inset(10)
+            $0.top.equalTo(safeAreaLayoutGuide).offset(140)
+            $0.leading.trailing.equalToSuperview().inset(20)
+            $0.height.equalTo(140)
+        }
+
+        homeIslandView.snp.makeConstraints {
+            $0.top.equalTo(homeProgressView.snp.bottom).offset(20)
+            $0.leading.equalToSuperview().inset(20)
+            $0.height.equalTo(180)
+        }
+
+        homeWalkView.snp.makeConstraints {
+            $0.top.equalTo(homeProgressView.snp.bottom).offset(20)
+            $0.leading.equalTo(homeIslandView.snp.trailing).offset(12)
+            $0.trailing.equalToSuperview().inset(20)
+            $0.width.equalTo(homeIslandView)
+            $0.height.equalTo(180)
         }
     }
-
 }

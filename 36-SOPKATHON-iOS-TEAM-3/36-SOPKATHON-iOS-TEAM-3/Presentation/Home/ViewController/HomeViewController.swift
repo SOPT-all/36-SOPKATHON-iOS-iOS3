@@ -42,7 +42,7 @@ final class HomeViewController: BaseUIViewController {
 
     private func startWalking() {
         guard motionManager.isAccelerometerAvailable else {
-            homeView.walkLabel.text = "가속도 센서 사용 불가"
+           // homeView.walkLabel.text = "가속도 센서 사용 불가"
             return
         }
 
@@ -59,11 +59,12 @@ final class HomeViewController: BaseUIViewController {
 
             if totalAcceleration > 1.5 {
                 self.shakeCount += 1
-                self.homeView.walkLabel.text = "걸음 횟수: \(self.shakeCount)"
+                //self.homeView.walkLabel.text = "걸음 횟수: \(self.shakeCount)"
                 print("흔들림 감지됨: \(self.shakeCount)")
             }
 
             homeView.homeProgressView.configure(currentSteps: shakeCount, totalSteps: 100)
+            homeView.homeWalkView.configure(count: shakeCount)
         }
     }
 
