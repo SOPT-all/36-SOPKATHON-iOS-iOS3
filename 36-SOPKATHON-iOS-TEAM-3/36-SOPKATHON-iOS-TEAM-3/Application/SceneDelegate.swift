@@ -10,25 +10,34 @@ import UIKit
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
-
-
+    
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         guard let windowScene = (scene as? UIWindowScene) else { return }
-
+        
+        let window = UIWindow(windowScene: windowScene)
+        window.overrideUserInterfaceStyle = UIUserInterfaceStyle.light
+        
+        let launchScreen = LaunchScreen()
+        window.rootViewController = launchScreen
+        window.makeKeyAndVisible()
+        
+        self.window = window
+        
         let appViewController = AppViewController()
         appViewController.setViewControllers([
             HomeViewController(),
             TestViewController()
         ])
-
-
-        let vc = appViewController
-        let navigationController = UINavigationController(rootViewController: vc) // 네비게이션 컨트롤러 추가
         
-        let window = UIWindow(windowScene: windowScene)
-        window.rootViewController = navigationController // 네비게이션 컨트롤러를 루트뷰로 설정
-        window.makeKeyAndVisible()
-        self.window = window
+        
+        let rootVC = appViewController
+        
+        // 스플래시 화면 2초 노출
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
+            let navigationController = UINavigationController(rootViewController: rootVC)
+            
+            self.window?.rootViewController = navigationController
+        }
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {
