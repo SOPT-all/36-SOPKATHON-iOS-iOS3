@@ -70,5 +70,6 @@ final class HomeView: BaseUIView {
             $0.width.equalTo(homeIslandView)
             $0.height.equalTo(180)
         }
+
     }
 }

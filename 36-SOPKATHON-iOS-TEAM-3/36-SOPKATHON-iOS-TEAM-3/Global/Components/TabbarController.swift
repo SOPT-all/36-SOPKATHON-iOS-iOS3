@@ -28,9 +28,7 @@ final class TabbarController: UIView {
     private let divider = UIView()
     
     override init(frame: CGRect) {
-        super.init(frame: frame)
-        self.backgroundColor = .black
-        
+        super.init(frame: frame)        
         setStyle()
         setUI()
         setLayout()
@@ -127,15 +125,24 @@ final class TabbarController: UIView {
         homeButton.tintColor = tab == .home ? .orange : .gray
         mapButton.tintColor = tab == .map ? .orange : .gray
     }
-    
+
+    private func provideHapticFeedback() {
+        let generator = UIImpactFeedbackGenerator(style: .medium)
+        generator.prepare()
+        generator.impactOccurred()
+    }
+
+
     @objc private func homeTapped() {
         selectTab(.home)
         onTabSelected?(.home)
+        provideHapticFeedback()
     }
     
     @objc private func mapTapped() {
         selectTab(.map)
         onTabSelected?(.map)
+        provideHapticFeedback()
     }
     
 }

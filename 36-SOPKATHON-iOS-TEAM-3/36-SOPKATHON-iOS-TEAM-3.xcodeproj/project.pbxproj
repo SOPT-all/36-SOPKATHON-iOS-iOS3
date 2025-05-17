@@ -29,6 +29,8 @@
 		E52EF50B2DD8E3A400812460 /* HomeProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E52EF50A2DD8E3A400812460 /* HomeProgressView.swift */; };
 		E52EF50D2DD8F6E300812460 /* HomeIslandView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E52EF50C2DD8F6E300812460 /* HomeIslandView.swift */; };
 		E52EF50F2DD8FA0B00812460 /* HomeWalkView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E52EF50E2DD8FA0B00812460 /* HomeWalkView.swift */; };
+		E52EF5112DD90F4400812460 /* AppViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E52EF5102DD90F4400812460 /* AppViewController.swift */; };
+		E52EF5132DD9152D00812460 /* TestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E52EF5122DD9152D00812460 /* TestView.swift */; };
 		E5B8BED52DD89C7300C6164C /* BaseUIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5B8BED42DD89C7300C6164C /* BaseUIViewController.swift */; };
 		E5B8BED72DD89C7A00C6164C /* BaseUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5B8BED62DD89C7A00C6164C /* BaseUIView.swift */; };
 		E5B8BEED2DD89D1B00C6164C /* UIViewController+.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5B8BEEC2DD89D1B00C6164C /* UIViewController+.swift */; };
@@ -63,6 +65,8 @@
 		E52EF50A2DD8E3A400812460 /* HomeProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeProgressView.swift; sourceTree = "<group>"; };
 		E52EF50C2DD8F6E300812460 /* HomeIslandView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeIslandView.swift; sourceTree = "<group>"; };
 		E52EF50E2DD8FA0B00812460 /* HomeWalkView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeWalkView.swift; sourceTree = "<group>"; };
+		E52EF5102DD90F4400812460 /* AppViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppViewController.swift; sourceTree = "<group>"; };
+		E52EF5122DD9152D00812460 /* TestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestView.swift; sourceTree = "<group>"; };
 		E5B8BED42DD89C7300C6164C /* BaseUIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseUIViewController.swift; sourceTree = "<group>"; };
 		E5B8BED62DD89C7A00C6164C /* BaseUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseUIView.swift; sourceTree = "<group>"; };
 		E5B8BEEC2DD89D1B00C6164C /* UIViewController+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+.swift"; sourceTree = "<group>"; };
@@ -194,6 +198,7 @@
 		331424CE2DD7A7CC00EBDBDB /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				E52EF5102DD90F4400812460 /* AppViewController.swift */,
 				331424CF2DD7A84200EBDBDB /* Home */,
 			);
 			path = Presentation;
@@ -228,6 +233,7 @@
 			isa = PBXGroup;
 			children = (
 				3314249E2DD7A10600EBDBDB /* HomeViewController.swift */,
+				E52EF5122DD9152D00812460 /* TestView.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -360,6 +366,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E52EF5112DD90F4400812460 /* AppViewController.swift in Sources */,
 				E5B8BF002DD8C79500C6164C /* GenericResponse.swift in Sources */,
 				331424C02DD7A4F400EBDBDB /* UIFont+.swift in Sources */,
 				331424A32DD7A10600EBDBDB /* AppDelegate.swift in Sources */,
@@ -371,6 +378,7 @@
 				094DB43E2DD8E9E800E0F4A7 /* TabbarController.swift in Sources */,
 				E5B8BEFC2DD8C6D900C6164C /* BaseTargetType.swift in Sources */,
 				E5B8BED72DD89C7A00C6164C /* BaseUIView.swift in Sources */,
+				E52EF5132DD9152D00812460 /* TestView.swift in Sources */,
 				331424BC2DD7A41B00EBDBDB /* UIStackView+.swift in Sources */,
 				E5B8BED52DD89C7300C6164C /* BaseUIViewController.swift in Sources */,
 				E5B8BEED2DD89D1B00C6164C /* UIViewController+.swift in Sources */,
