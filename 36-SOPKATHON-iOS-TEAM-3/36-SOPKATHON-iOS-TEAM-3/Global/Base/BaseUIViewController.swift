@@ -17,7 +17,7 @@ class BaseUIViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .white
+        view.backgroundColor = .gray100
         navigationController?.navigationBar.isHidden = true
         self.hideKeyboardWhenTappedAround()
 

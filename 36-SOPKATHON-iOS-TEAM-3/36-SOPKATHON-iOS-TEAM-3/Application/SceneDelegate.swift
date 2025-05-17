@@ -14,8 +14,15 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         guard let windowScene = (scene as? UIWindowScene) else { return }
-        
-        let vc = HomeViewController()
+
+        let appViewController = AppViewController()
+        appViewController.setViewControllers([
+            HomeViewController(),
+            TestViewController()
+        ])
+
+
+        let vc = appViewController
         let navigationController = UINavigationController(rootViewController: vc) // 네비게이션 컨트롤러 추가
         
         let window = UIWindow(windowScene: windowScene)
