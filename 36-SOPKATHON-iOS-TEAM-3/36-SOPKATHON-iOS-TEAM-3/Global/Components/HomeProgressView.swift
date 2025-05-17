@@ -66,7 +66,7 @@ final class HomeProgressView: BaseUIView {
         }
 
         descriptionLabel.snp.makeConstraints {
-            $0.top.equalToSuperview().inset(20)
+            $0.top.equalToSuperview().inset(8)
             $0.leading.equalToSuperview().inset(24)
         }
 

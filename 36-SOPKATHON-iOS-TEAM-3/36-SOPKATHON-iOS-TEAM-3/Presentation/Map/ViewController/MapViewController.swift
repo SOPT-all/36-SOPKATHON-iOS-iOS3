@@ -33,7 +33,7 @@ final class MapViewController: BaseUIViewController {
         mapView.snp.makeConstraints {
             $0.top.equalTo(view.safeAreaLayoutGuide).inset(24)
             $0.horizontalEdges.equalToSuperview()
-            $0.bottom.equalTo(view.safeAreaLayoutGuide).inset(88)
+            $0.height.equalTo(612)
         }
     }
     
